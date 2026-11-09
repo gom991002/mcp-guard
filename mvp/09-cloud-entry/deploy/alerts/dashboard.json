@@ -1,0 +1,44 @@
+{
+  "start": "-PT24H",
+  "widgets": [
+    {
+      "type": "alarm",
+      "x": 0, "y": 0, "width": 24, "height": 3,
+      "properties": {
+        "title": "mcp-guard M1 상관 규칙 경보 상태",
+        "alarms": ["arn:aws:cloudwatch:<region>:<account>:alarm:mcp-guard-correlation-alert"],
+        "sortBy": "stateUpdatedTimestamp"
+      }
+    },
+    {
+      "type": "log",
+      "x": 0, "y": 3, "width": 24, "height": 9,
+      "properties": {
+        "region": "<region>",
+        "title": "최근 상관 규칙 경보 (correlation_alert)",
+        "query": "SOURCE '/mcp-guard/audit' | filter event_type = \"correlation_alert\"\n| fields @timestamp, details.severity, details.rule_id, details.message, session_id, server_name, tool_name\n| sort @timestamp desc\n| limit 100",
+        "view": "table"
+      }
+    },
+    {
+      "type": "log",
+      "x": 0, "y": 12, "width": 12, "height": 6,
+      "properties": {
+        "region": "<region>",
+        "title": "규칙별 경보 수",
+        "query": "SOURCE '/mcp-guard/audit' | filter event_type = \"correlation_alert\"\n| stats count(*) as alerts by details.rule_id",
+        "view": "bar"
+      }
+    },
+    {
+      "type": "log",
+      "x": 12, "y": 12, "width": 12, "height": 6,
+      "properties": {
+        "region": "<region>",
+        "title": "차단된 판정 (block)",
+        "query": "SOURCE '/mcp-guard/audit' | filter verdict = \"block\"\n| stats count(*) as blocks by event_type, server_name\n| sort blocks desc",
+        "view": "table"
+      }
+    }
+  ]
+}

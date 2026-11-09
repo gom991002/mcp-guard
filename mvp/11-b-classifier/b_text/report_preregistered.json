@@ -1,0 +1,105 @@
+{
+  "benign": {
+    "mcptox_clean": 362,
+    "docker_catalog": 755
+  },
+  "malicious": 1348,
+  "rules": {
+    "B_DESCRIPTION_PROMPT_OVERRIDE": {
+      "benign_hold_rate": 0.0,
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": [],
+      "recall": 0.0
+    },
+    "B_DESCRIPTION_SECRET_HARVESTING": {
+      "benign_hold_rate": 0.0009,
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 1
+      },
+      "benign_examples": [
+        "Run a sample workload on the given target using a Performix recipe, and interpret the results. Some example user requests: 'Help me analyze my code's performanc"
+      ],
+      "recall": 0.0564
+    },
+    "B_DESCRIPTION_HIDDEN_INSTRUCTION": {
+      "benign_hold_rate": 0.0009,
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 1
+      },
+      "benign_examples": [
+        "Verify an email domain by checking its DNS records. Okta looks up the DNS records that were returned when the domain was created and verifies that they are corr"
+      ],
+      "recall": 0.3909
+    },
+    "B_SUSPICIOUS_DESCRIPTION (operator phrases)": {
+      "benign_hold_rate": 0.0,
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": [],
+      "recall": 0.0015
+    }
+  },
+  "before_d6_39": {
+    "rules": [
+      "B_DESCRIPTION_PROMPT_OVERRIDE",
+      "B_DESCRIPTION_SECRET_HARVESTING",
+      "B_SUSPICIOUS_DESCRIPTION (operator phrases)"
+    ],
+    "benign_hold_rate": 0.0009,
+    "recall": 0.0579,
+    "recall_by_template": {
+      "Template-1": 0.0711,
+      "Template-2": 0.079,
+      "Template-3": 0.0356
+    },
+    "recall_by_risk": {
+      "Code Injection": 0.0,
+      "Credential Leakage": 0.4957,
+      "Data Tampering": 0.0,
+      "Financial Loss": 0.0,
+      "Information Manipulation": 0.0036,
+      "Infrastructure Damage": 0.0887,
+      "Instruction Tampering": 0.0702,
+      "Message Hijacking": 0.0,
+      "Other": 0.0,
+      "Privacy Leakage": 0.0181,
+      "Service Disruption": 0.0
+    }
+  },
+  "kept": {
+    "rules": [
+      "B_DESCRIPTION_PROMPT_OVERRIDE",
+      "B_DESCRIPTION_SECRET_HARVESTING",
+      "B_DESCRIPTION_HIDDEN_INSTRUCTION",
+      "B_SUSPICIOUS_DESCRIPTION (operator phrases)"
+    ],
+    "benign_hold_rate": 0.0018,
+    "recall": 0.4214,
+    "recall_by_template": {
+      "Template-1": 0.4882,
+      "Template-2": 0.4277,
+      "Template-3": 0.3932
+    },
+    "recall_by_risk": {
+      "Code Injection": 0.3492,
+      "Credential Leakage": 0.7739,
+      "Data Tampering": 0.4333,
+      "Financial Loss": 0.4364,
+      "Information Manipulation": 0.3737,
+      "Infrastructure Damage": 0.3871,
+      "Instruction Tampering": 0.4211,
+      "Message Hijacking": 0.3409,
+      "Other": 0.5,
+      "Privacy Leakage": 0.3986,
+      "Service Disruption": 0.3684
+    }
+  },
+  "kept_within_total_limit": true
+}

@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.env
+.env.*
+!.env.example
+.mcp-guard/
+.hf-cache/
+_backup_before_reorg_*/
+
+
+# Deployment secrets and live config (examples stay tracked)
+mvp/09-cloud-entry/deploy/config/*.json
+!mvp/09-cloud-entry/deploy/config/*.example.json
+
+# Downloaded by each installation; the source declares no license (D6-31)
+src/mcp_guard/data/popular_pypi.txt
+
+# Local full-project backup archives
+mcp-guard_*.zip

@@ -1,0 +1,6 @@
+# Caddy obtains the HTTPS certificate for MCP_GUARD_DOMAIN and forwards to the
+# gateway. The gateway trusts X-Forwarded-For only from the edge network.
+# One gateway only: login and approval state is per instance (D6-58).
+{$MCP_GUARD_DOMAIN} {
+	reverse_proxy gateway:8080
+}

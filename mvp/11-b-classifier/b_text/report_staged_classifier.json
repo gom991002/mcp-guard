@@ -1,0 +1,17 @@
+{
+  "classifier_threshold": 0.8588,
+  "llm_floor": null,
+  "dev": {
+    "recall": 0.9901,
+    "benign_hold_rate": 0.0187,
+    "attacks": 504,
+    "benign": 695
+  },
+  "test": {
+    "recall": 0.9573,
+    "benign_hold_rate": 0.0118,
+    "attacks": 844,
+    "benign": 422
+  },
+  "note": ""
+}

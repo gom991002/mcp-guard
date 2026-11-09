@@ -1,0 +1,78 @@
+# Local demo of the remote gateway (portfolio). Nothing here is for a real deployment:
+# ports bind to 127.0.0.1 only, the open gateway has no sign-in, and the demo
+# password is in plain text below.
+#
+#   cd mvp/09-cloud-entry/deploy/demo
+#   docker compose up -d --build
+#   python smoke.py            # walks the defense flow end to end
+#   docker compose down -v
+#
+# gateway        http://127.0.0.1:8080/mcp  no sign-in, session from the mcp-guard-session-id header
+# gateway-oauth  http://127.0.0.1:8081      OAuth 2.1 sign-in (user demo / demo-password-only), /approve page
+services:
+  gateway:
+    build:
+      context: ../../../..
+      dockerfile: mvp/09-cloud-entry/deploy/Dockerfile
+      args:
+        MCP_GUARD_WITH_CLASSIFIER: ${MCP_GUARD_WITH_CLASSIFIER:-0}
+    image: mcp-guard-gateway:demo
+    command:
+      - --server=asgi
+      - --host=0.0.0.0
+      - --port=8080
+      - --auth=none
+      - --allow-unauthenticated
+      - --accept-unbound-sessions
+      - --policy=/config/policy-open.json
+      - --servers=/config/servers.json
+      - --state-dir=/data/state
+      - --audit-log=/data/state/audit.jsonl
+      - --enroll
+      - --live-tools
+    environment:
+      MCP_GUARD_B_CLASSIFIER: ${MCP_GUARD_B_CLASSIFIER:-0}
+    volumes:
+      - ./config:/config:ro
+      - open-data:/data
+    ports: ["127.0.0.1:8080:8080"]
+    networks: [demo]
+
+  gateway-oauth:
+    image: mcp-guard-gateway:demo
+    entrypoint:
+      - sh
+      - -c
+      - >-
+        MCP_GUARD_NEW_PASSWORD=demo-password-only python -m cloud_entry.admin add-user
+        --users /data/users.json demo &&
+        exec python -m http_gateway.server --server=asgi --host=0.0.0.0 --port=8081
+        --auth=oauth --public-url=http://127.0.0.1:8081 --users=/data/users.json
+        --policy=/config/policy.json --servers=/config/servers.json --state-dir=/data/state
+        --audit-log=/data/state/audit.jsonl --enroll --live-tools --allow-taint-exceptions
+    volumes:
+      - ./config:/config:ro
+      - oauth-data:/data
+    ports: ["127.0.0.1:8081:8081"]
+    networks: [demo]
+
+  # Demo upstreams share each gateway's network, so the gateway reaches them on
+  # loopback (stage 0 accepts plain http only there; anything else must be HTTPS).
+  upstream-open:
+    image: mcp-guard-gateway:demo
+    entrypoint: ["python", "/app/mvp/09-cloud-entry/deploy/demo/demo_upstream.py", "--host", "127.0.0.1", "--port", "9000"]
+    network_mode: "service:gateway"
+    depends_on: [gateway]
+
+  upstream-oauth:
+    image: mcp-guard-gateway:demo
+    entrypoint: ["python", "/app/mvp/09-cloud-entry/deploy/demo/demo_upstream.py", "--host", "127.0.0.1", "--port", "9000"]
+    network_mode: "service:gateway-oauth"
+    depends_on: [gateway-oauth]
+
+networks:
+  demo: {}
+
+volumes:
+  open-data: {}
+  oauth-data: {}

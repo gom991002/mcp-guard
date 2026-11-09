@@ -1,0 +1,65 @@
+# Remote gateway: proxy code -> Docker -> cloud server -> https://<domain>/mcp
+# Run from this folder: MCP_GUARD_DOMAIN=mcp.example.com docker compose up -d
+services:
+  gateway:
+    build:
+      context: ../../..
+      dockerfile: mvp/09-cloud-entry/deploy/Dockerfile
+      args:
+        # The B classifier is on by default in deployment (measured: about 0.5 GB of memory,
+        # 16 ms per description); set MCP_GUARD_WITH_CLASSIFIER=0 in .env to build without it.
+        MCP_GUARD_WITH_CLASSIFIER: ${MCP_GUARD_WITH_CLASSIFIER:-1}
+    command:
+      - --server=asgi
+      - --host=0.0.0.0
+      - --port=8080
+      - --auth=oauth
+      - --public-url=https://${MCP_GUARD_DOMAIN:?set MCP_GUARD_DOMAIN}
+      - --policy=/config/policy.json
+      - --servers=/config/servers.json
+      - --users=/config/users.json
+      - --upstream-credentials=/config/credentials.json
+      # Private state folder (state_storage.py): approvals, OAuth state, signing key,
+      # upstream tokens, session taint and the audit copy all live inside it.
+      - --state-dir=/data/state
+      - --trusted-proxy=172.28.0.0/24
+      - --shared-egress=160.79.104.0/21
+      - --shared-egress=153.61.208.0/20
+      - --shared-egress-feed=chatgpt
+      - --upstream-token-store=${MCP_GUARD_TOKEN_STORE:-file}
+      - --audit-log=/data/state/audit.jsonl
+      - --audit-cloudwatch-group=${MCP_GUARD_AUDIT_LOG_GROUP:-}
+      - --oauth-clients=${MCP_GUARD_OAUTH_CLIENTS:-}
+      - --live-tools
+    environment:
+      MCP_GUARD_B_CLASSIFIER: ${MCP_GUARD_WITH_CLASSIFIER:-1}
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./config:/config:ro
+      - guard-data:/data
+    networks: [edge]
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    ports: ["80:80", "443:443"]
+    environment:
+      MCP_GUARD_DOMAIN: ${MCP_GUARD_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    networks: [edge]
+    depends_on: [gateway]
+    restart: unless-stopped
+
+networks:
+  edge:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24
+
+volumes:
+  guard-data: {}
+  caddy-data: {}

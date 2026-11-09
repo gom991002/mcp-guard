@@ -1,0 +1,308 @@
+{
+  "servers": 28,
+  "tools": 755,
+  "methods": {
+    "uts39 (standard)": {
+      "benign_hold_rate": 0.0,
+      "benign_held": 0,
+      "benign_examples": [],
+      "recall_with_format_check": 0.2686,
+      "recall_by_class": {
+        "affix": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "ascii_homoglyph": {
+          "n": 717,
+          "name_check": 0.6834,
+          "with_format": 0.6848
+        },
+        "case": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "omission": {
+          "n": 754,
+          "name_check": 0.0,
+          "with_format": 0.0027
+        },
+        "repetition": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "separators": {
+          "n": 748,
+          "name_check": 0.0,
+          "with_format": 0.0
+        },
+        "substitution": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "transposition": {
+          "n": 741,
+          "name_check": 0.0,
+          "with_format": 0.0027
+        },
+        "unicode_homoglyph": {
+          "n": 754,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "word_order": {
+          "n": 748,
+          "name_check": 0.0,
+          "with_format": 0.0
+        }
+      }
+    },
+    "uts39+separators": {
+      "benign_hold_rate": 0.0,
+      "benign_held": 0,
+      "benign_examples": [],
+      "recall_with_format_check": 0.3686,
+      "recall_by_class": {
+        "affix": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "ascii_homoglyph": {
+          "n": 717,
+          "name_check": 0.6834,
+          "with_format": 0.6848
+        },
+        "case": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "omission": {
+          "n": 754,
+          "name_check": 0.0,
+          "with_format": 0.0027
+        },
+        "repetition": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "separators": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "substitution": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "transposition": {
+          "n": 741,
+          "name_check": 0.0,
+          "with_format": 0.0027
+        },
+        "unicode_homoglyph": {
+          "n": 754,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "word_order": {
+          "n": 748,
+          "name_check": 0.0,
+          "with_format": 0.0
+        }
+      }
+    },
+    "uts39+separators+reorder": {
+      "benign_hold_rate": 0.0,
+      "benign_held": 0,
+      "benign_examples": [],
+      "recall_with_format_check": 0.4686,
+      "recall_by_class": {
+        "affix": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "ascii_homoglyph": {
+          "n": 717,
+          "name_check": 0.6834,
+          "with_format": 0.6848
+        },
+        "case": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "omission": {
+          "n": 754,
+          "name_check": 0.0,
+          "with_format": 0.0027
+        },
+        "repetition": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "separators": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "substitution": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "transposition": {
+          "n": 741,
+          "name_check": 0.0,
+          "with_format": 0.0027
+        },
+        "unicode_homoglyph": {
+          "n": 754,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "word_order": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        }
+      }
+    },
+    "uts39+separators+reorder+edit(guarded)": {
+      "benign_hold_rate": 0.0053,
+      "benign_held": 4,
+      "benign_examples": [
+        "get_node ~ get_nodes (edit)",
+        "get_jobs ~ get_job (edit)",
+        "get_job ~ get_jobs (edit)",
+        "get_nodes ~ get_node (edit)"
+      ],
+      "recall_with_format_check": 0.8828,
+      "recall_by_class": {
+        "affix": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "ascii_homoglyph": {
+          "n": 717,
+          "name_check": 0.9902,
+          "with_format": 0.9902
+        },
+        "case": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "omission": {
+          "n": 754,
+          "name_check": 0.9987,
+          "with_format": 0.9987
+        },
+        "repetition": {
+          "n": 755,
+          "name_check": 0.9987,
+          "with_format": 0.9987
+        },
+        "separators": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "substitution": {
+          "n": 755,
+          "name_check": 0.9907,
+          "with_format": 0.9907
+        },
+        "transposition": {
+          "n": 741,
+          "name_check": 0.8543,
+          "with_format": 0.8543
+        },
+        "unicode_homoglyph": {
+          "n": 754,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "word_order": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        }
+      }
+    },
+    "uts39+separators+reorder+edit(any)": {
+      "benign_hold_rate": 0.0053,
+      "benign_held": 4,
+      "benign_examples": [
+        "get_node ~ get_nodes (edit)",
+        "get_jobs ~ get_job (edit)",
+        "get_job ~ get_jobs (edit)",
+        "get_nodes ~ get_node (edit)"
+      ],
+      "recall_with_format_check": 0.8845,
+      "recall_by_class": {
+        "affix": {
+          "n": 755,
+          "name_check": 0.0,
+          "with_format": 0.0026
+        },
+        "ascii_homoglyph": {
+          "n": 717,
+          "name_check": 0.9944,
+          "with_format": 0.9944
+        },
+        "case": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "omission": {
+          "n": 754,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "repetition": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "separators": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "substitution": {
+          "n": 755,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "transposition": {
+          "n": 741,
+          "name_check": 0.8556,
+          "with_format": 0.8556
+        },
+        "unicode_homoglyph": {
+          "n": 754,
+          "name_check": 1.0,
+          "with_format": 1.0
+        },
+        "word_order": {
+          "n": 748,
+          "name_check": 1.0,
+          "with_format": 1.0
+        }
+      }
+    }
+  },
+  "attacks": 7482,
+  "chosen": "uts39+separators+reorder+edit(any)"
+}

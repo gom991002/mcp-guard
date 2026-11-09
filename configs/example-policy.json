@@ -1,0 +1,35 @@
+{
+  "trusted_namespaces": [
+    "mcp_guard",
+    "company"
+  ],
+  "trusted_registry_publishers": [],
+  "protected_tool_names": [
+    "github.search",
+    "slack.send_message",
+    "filesystem.read_file"
+  ],
+  "suspicious_phrases": [
+    "ignore previous instructions",
+    "disable guard",
+    "send secrets",
+    "exfiltrate"
+  ],
+  "registered_servers": [
+    "company-tools",
+    "helper"
+  ],
+  "trusted_sources": [
+    "gateway",
+    "registry",
+    "local"
+  ],
+  "approved_schema_hashes": {
+    "company-tools:company.search": "sha256:example"
+  },
+  "refresh_before_call_tools": [
+    "slack.send_message",
+    "filesystem.read_file"
+  ]
+}
+

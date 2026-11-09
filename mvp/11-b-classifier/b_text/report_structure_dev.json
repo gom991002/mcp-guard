@@ -1,0 +1,287 @@
+{
+  "part": "dev",
+  "per_signal": {
+    "B_DESCRIPTION_HIDDEN_INSTRUCTION": {
+      "benign": 695,
+      "benign_held": 1,
+      "benign_hold_rate": 0.0014,
+      "attacks": 504,
+      "recall": 0.3829,
+      "by_template": {
+        "Template-1": 0.4531,
+        "Template-2": 0.4017,
+        "Template-3": 0.3412
+      },
+      "by_risk": {
+        "Code Injection": 0.3243,
+        "Credential Leakage": 0.6,
+        "Data Tampering": 0.35,
+        "Financial Loss": 0.375,
+        "Information Manipulation": 0.3293,
+        "Infrastructure Damage": 0.3729,
+        "Instruction Tampering": 0.2941,
+        "Message Hijacking": 0.3333,
+        "Privacy Leakage": 0.3438,
+        "Service Disruption": 0.35
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 1
+      },
+      "benign_examples": [
+        "Verify an email domain by checking its DNS records. Okta looks up the DNS records that were returned when the domain was created and verifies that they are corr"
+      ]
+    },
+    "B_DESCRIPTION_PROMPT_OVERRIDE": {
+      "benign": 695,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 504,
+      "recall": 0.1349,
+      "by_template": {
+        "Template-1": 0.1719,
+        "Template-2": 0.1179,
+        "Template-3": 0.1422
+      },
+      "by_risk": {
+        "Code Injection": 0.2162,
+        "Credential Leakage": 0.16,
+        "Data Tampering": 0.05,
+        "Financial Loss": 0.3125,
+        "Information Manipulation": 0.1098,
+        "Infrastructure Damage": 0.1864,
+        "Instruction Tampering": 0.0,
+        "Message Hijacking": 0.1667,
+        "Privacy Leakage": 0.0417,
+        "Service Disruption": 0.1833
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_SECRET_HARVESTING": {
+      "benign": 695,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 504,
+      "recall": 0.1131,
+      "by_template": {
+        "Template-1": 0.1875,
+        "Template-2": 0.1179,
+        "Template-3": 0.0853
+      },
+      "by_risk": {
+        "Code Injection": 0.0,
+        "Credential Leakage": 0.4933,
+        "Data Tampering": 0.0,
+        "Financial Loss": 0.0,
+        "Information Manipulation": 0.0,
+        "Infrastructure Damage": 0.1864,
+        "Instruction Tampering": 0.2353,
+        "Message Hijacking": 0.0,
+        "Privacy Leakage": 0.0521,
+        "Service Disruption": 0.0
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_CROSS_TOOL_DIRECTIVE": {
+      "benign": 695,
+      "benign_held": 3,
+      "benign_hold_rate": 0.0043,
+      "attacks": 504,
+      "recall": 0.8413,
+      "by_template": {
+        "Template-1": 0.9531,
+        "Template-2": 0.9607,
+        "Template-3": 0.6777
+      },
+      "by_risk": {
+        "Code Injection": 0.9189,
+        "Credential Leakage": 1.0,
+        "Data Tampering": 0.7,
+        "Financial Loss": 1.0,
+        "Information Manipulation": 0.6341,
+        "Infrastructure Damage": 1.0,
+        "Instruction Tampering": 0.4706,
+        "Message Hijacking": 1.0,
+        "Privacy Leakage": 0.7917,
+        "Service Disruption": 0.9
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 3
+      },
+      "benign_examples": [
+        "Create a new custom domain for the Okta organization. After creating a domain, the response includes DNS records (TXT + CNAME) that you must configure at your D",
+        "Create a new email domain for the Okta organization. After creation the response includes DNS records (one TXT record and three CNAME records) that you must pub",
+        "Retrieve a specific Device Assurance Policy by ID. Use this to inspect the full configuration of a policy — platform type (ANDROID, IOS, MACOS, WINDOWS, CHROMEO"
+      ]
+    },
+    "B_DESCRIPTION_ARGUMENT_TAMPERING": {
+      "benign": 695,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 504,
+      "recall": 0.2341,
+      "by_template": {
+        "Template-1": 0.0,
+        "Template-2": 0.0087,
+        "Template-3": 0.5498
+      },
+      "by_risk": {
+        "Code Injection": 0.0811,
+        "Credential Leakage": 0.12,
+        "Data Tampering": 0.25,
+        "Financial Loss": 0.1562,
+        "Information Manipulation": 0.4756,
+        "Infrastructure Damage": 0.0847,
+        "Instruction Tampering": 0.2353,
+        "Message Hijacking": 0.5,
+        "Privacy Leakage": 0.0833,
+        "Service Disruption": 0.5333
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_PRIORITY_CLAIM": {
+      "benign": 695,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 504,
+      "recall": 0.1845,
+      "by_template": {
+        "Template-1": 0.0,
+        "Template-2": 0.0175,
+        "Template-3": 0.4218
+      },
+      "by_risk": {
+        "Code Injection": 0.0,
+        "Credential Leakage": 0.08,
+        "Data Tampering": 0.075,
+        "Financial Loss": 0.25,
+        "Information Manipulation": 0.2561,
+        "Infrastructure Damage": 0.1525,
+        "Instruction Tampering": 0.1176,
+        "Message Hijacking": 0.5,
+        "Privacy Leakage": 0.125,
+        "Service Disruption": 0.4833
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    }
+  },
+  "word_rules": {
+    "benign": 695,
+    "benign_held": 1,
+    "benign_hold_rate": 0.0014,
+    "attacks": 504,
+    "recall": 0.5417,
+    "by_template": {
+      "Template-1": 0.6406,
+      "Template-2": 0.5371,
+      "Template-3": 0.5166
+    },
+    "by_risk": {
+      "Code Injection": 0.5405,
+      "Credential Leakage": 0.8533,
+      "Data Tampering": 0.4,
+      "Financial Loss": 0.6562,
+      "Information Manipulation": 0.439,
+      "Infrastructure Damage": 0.5763,
+      "Instruction Tampering": 0.4706,
+      "Message Hijacking": 0.5,
+      "Privacy Leakage": 0.4062,
+      "Service Disruption": 0.5333
+    },
+    "benign_held_by_source": {
+      "mcptox_clean": 0,
+      "docker_catalog": 1
+    },
+    "benign_examples": [
+      "Verify an email domain by checking its DNS records. Okta looks up the DNS records that were returned when the domain was created and verifies that they are corr"
+    ]
+  },
+  "structure_only": {
+    "benign": 695,
+    "benign_held": 3,
+    "benign_hold_rate": 0.0043,
+    "attacks": 504,
+    "recall": 0.9008,
+    "by_template": {
+      "Template-1": 0.9531,
+      "Template-2": 0.9607,
+      "Template-3": 0.8199
+    },
+    "by_risk": {
+      "Code Injection": 0.9189,
+      "Credential Leakage": 1.0,
+      "Data Tampering": 0.85,
+      "Financial Loss": 1.0,
+      "Information Manipulation": 0.8171,
+      "Infrastructure Damage": 1.0,
+      "Instruction Tampering": 0.6471,
+      "Message Hijacking": 1.0,
+      "Privacy Leakage": 0.7917,
+      "Service Disruption": 1.0
+    },
+    "benign_held_by_source": {
+      "mcptox_clean": 0,
+      "docker_catalog": 3
+    },
+    "benign_examples": [
+      "Create a new custom domain for the Okta organization. After creating a domain, the response includes DNS records (TXT + CNAME) that you must configure at your D",
+      "Create a new email domain for the Okta organization. After creation the response includes DNS records (one TXT record and three CNAME records) that you must pub",
+      "Retrieve a specific Device Assurance Policy by ID. Use this to inspect the full configuration of a policy — platform type (ANDROID, IOS, MACOS, WINDOWS, CHROMEO"
+    ]
+  },
+  "word_and_structure": {
+    "benign": 695,
+    "benign_held": 4,
+    "benign_hold_rate": 0.0058,
+    "attacks": 504,
+    "recall": 0.9385,
+    "by_template": {
+      "Template-1": 0.9688,
+      "Template-2": 0.9738,
+      "Template-3": 0.891
+    },
+    "by_risk": {
+      "Code Injection": 0.9459,
+      "Credential Leakage": 1.0,
+      "Data Tampering": 0.9,
+      "Financial Loss": 1.0,
+      "Information Manipulation": 0.878,
+      "Infrastructure Damage": 1.0,
+      "Instruction Tampering": 0.8824,
+      "Message Hijacking": 1.0,
+      "Privacy Leakage": 0.8646,
+      "Service Disruption": 1.0
+    },
+    "benign_held_by_source": {
+      "mcptox_clean": 0,
+      "docker_catalog": 4
+    },
+    "benign_examples": [
+      "Create a new custom domain for the Okta organization. After creating a domain, the response includes DNS records (TXT + CNAME) that you must configure at your D",
+      "Create a new email domain for the Okta organization. After creation the response includes DNS records (one TXT record and three CNAME records) that you must pub",
+      "Verify an email domain by checking its DNS records. Okta looks up the DNS records that were returned when the domain was created and verifies that they are corr",
+      "Retrieve a specific Device Assurance Policy by ID. Use this to inspect the full configuration of a policy — platform type (ANDROID, IOS, MACOS, WINDOWS, CHROMEO"
+    ]
+  },
+  "bars": {
+    "each_signal_at_most_1pct": true,
+    "together_at_most_2pct": true
+  }
+}

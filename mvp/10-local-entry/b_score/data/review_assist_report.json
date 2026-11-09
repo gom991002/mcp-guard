@@ -1,0 +1,1165 @@
+{
+  "model": "qwen2.5-coder:7b",
+  "base_url": "http://mcp-guard-ollama:11434/v1",
+  "per_class": 30,
+  "seed": 20261102,
+  "held_test": {
+    "malicious": 119,
+    "benign": 47
+  },
+  "summary": {
+    "malicious": {
+      "n": 30,
+      "suspicious": 29,
+      "unclear": 1,
+      "likely_benign": 0,
+      "suspicious_rate": 0.9667,
+      "unclear_rate": 0.0333,
+      "likely_benign_rate": 0.0,
+      "suspicious_ci95": [
+        0.8333,
+        0.9941
+      ],
+      "unclear_ci95": [
+        0.0059,
+        0.1667
+      ],
+      "likely_benign_ci95": [
+        0.0,
+        0.1135
+      ]
+    },
+    "benign": {
+      "n": 30,
+      "suspicious": 27,
+      "unclear": 3,
+      "likely_benign": 0,
+      "suspicious_rate": 0.9,
+      "unclear_rate": 0.1,
+      "likely_benign_rate": 0.0,
+      "suspicious_ci95": [
+        0.7438,
+        0.9654
+      ],
+      "unclear_ci95": [
+        0.0346,
+        0.2562
+      ],
+      "likely_benign_ci95": [
+        0.0,
+        0.1135
+      ]
+    }
+  },
+  "mean_seconds": 65.4,
+  "results": [
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "bambang-botok47-breki",
+      "version": "1.1.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code attempts to execute a process using `child_process.exec`, which could be used for malicious purposes.",
+        "The code contains a list of Indonesian names and foods, which might be used for obfuscation or to target specific users.",
+        "The code is similar to known malware, as indicated by the `B_CODE_KNOWN_MALWARE_SIMILAR` signal.",
+        "The code is untrusted and contains potentially harmful operations.",
+        "The code execution signal (`B_CODE_PROCESS_EXECUTION`) suggests that the code might be attempting to run arbitrary commands, which is a red flag."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 78.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "@identity-authn/authn-js-sdk",
+      "version": "9.9.9",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package includes an install script, which can be a potential entry point for malicious code.",
+        "The score indicates a high likelihood of malicious activity.",
+        "Untrusted code is present within the package, which could be manipulated to perform malicious actions.",
+        "The signal contribution from 'install_script' is significantly high, suggesting its importance in the package's behavior."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 31.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "react-bindify-decorators",
+      "version": "8.10.10",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package uses dynamic evaluation (`eval`) which can be dangerous if the input is not properly sanitized.",
+        "The package executes a process using `child_process.spawn`, which could be used for malicious purposes if not properly controlled.",
+        "The code is similar to known malware, specifically signale-log@3.1.3 and react-bindify-decorators@8.10.10, indicating potential malicious intent.",
+        "The use of `eval` and process execution without proper validation or sandboxing is a significant security risk.",
+        "The presence of untrusted code within `<untrusted-cf61625a85b022bb>` tags suggests that the code may have been tampered with or is not fully trusted."
+      ],
+      "evidence_items": 4,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 74.0
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "eslint-config-proton-lint",
+      "version": "1.0.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes network requests, which could be used for malicious purposes.",
+        "The code is similar to known malware, specifically tinywallet@4.0.0 index.js.",
+        "The use of dynamic network requests without proper validation or control is concerning.",
+        "The code includes sensitive system information such as home directory and hostname."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 40.6
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "unreal-engine-material-editor",
+      "version": "1.0.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code attempts to execute a process using `child_process.spawn`, which could be used for malicious purposes.",
+        "The code is similar to known malware, as indicated by the `B_CODE_KNOWN_MALWARE_SIMILAR` signal.",
+        "The `detached: true` and `stdio: 'ignore'` options in the `spawn` call suggest that the process may be running in the background without proper supervision.",
+        "The use of untrusted code within `<untrusted-6e6ddab9bc0c3b57>` tags indicates potential manipulation.",
+        "The score of 0.9938 suggests a high likelihood of malicious activity."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 53.8
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "@vfx-payment/transaction-summary",
+      "version": "99.99.99",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package version is extremely high (99.99.99), which is unusual and may indicate malicious activity.",
+        "The presence of an 'install_script' signal suggests the package may attempt to execute scripts during installation, which could be malicious.",
+        "The score of 0.978 indicates a high likelihood of malicious activity based on the model's analysis.",
+        "The signal contribution of 4.0735 for 'install_script' is significantly high, further supporting the suspicion of malicious intent.",
+        "Untrusted code is present, which could be used to execute malicious scripts or manipulate the system."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 44.4
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "multiturn-prompts-agent",
+      "version": "10.0.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package includes an 'install_script' signal, which may indicate the presence of potentially malicious code.",
+        "The score of 0.978 suggests a high likelihood of malicious activity.",
+        "The signal contribution of 4.0735 for 'install_script' is significantly high, further supporting suspicion.",
+        "Untrusted code is present within <untrusted-330895dfe46ba441> tags, which could be used to execute harmful operations."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 36.7
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "jaja-naget46-miaww",
+      "version": "3.3.3",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code attempts to execute a process using `child_process.exec`, which could be used for malicious purposes.",
+        "The code contains a list of Indonesian names and foods, which might be used for obfuscation or to target specific users.",
+        "The code is similar to known malware, specifically `erwin-tapai20-riris@1.2.4`, indicating potential malicious intent.",
+        "The code is untrusted and contains suspicious patterns that could indicate malicious activity."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 63.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "xolovzgfkdamoj",
+      "version": "",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code contains `exec` statements, which can execute arbitrary code.",
+        "The code decodes base64 encoded strings and executes them, indicating potential code injection.",
+        "The code appears to be dynamically evaluating and executing strings, which is a red flag.",
+        "The code is embedded within `<untrusted-8009bf20615ea1ad>` tags, suggesting it may be untrusted.",
+        "The signal contributions indicate a high likelihood of malicious activity."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 89.8
+    },
+    {
+      "ecosystem": "npm",
+      "category": "compromised_lib",
+      "label": 1,
+      "name": "@crowdstrike/glide-core",
+      "version": "0.34.2",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "evidence_items": 16,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 40.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "org.mixedrealitytoolkit.core",
+      "version": "10.0.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package contains an 'install_script' signal, which could indicate the presence of potentially malicious code.",
+        "The score of 0.978 suggests a high likelihood of malicious activity.",
+        "The 'install_script' signal contributes significantly to the overall score, with a log-odds value of 4.0735.",
+        "Untrusted code is present within <untrusted-dbfdc571b43dd973> tags, which further raises suspicion."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 36.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "@pluxee-design-system/core",
+      "version": "10.9897.9889",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes dynamic network requests, which could be used for malicious purposes.",
+        "The code contains known malware patterns.",
+        "The use of `fetch` for network requests without proper validation or security measures is concerning.",
+        "The presence of untrusted code within `<untrusted-2413e88fbb78231e>` tags indicates potential manipulation.",
+        "The similarity to known malware suggests the code may be malicious."
+      ],
+      "evidence_items": 4,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 71.5
+    },
+    {
+      "ecosystem": "npm",
+      "category": "compromised_lib",
+      "label": 1,
+      "name": "coinmarketcap-api",
+      "version": "3.1.2",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package uses `execSync` to execute a shell command, which can be dangerous if not properly sanitized.",
+        "The package collects the entire environment (`env: { ...process.env }`) before executing the command, which could expose sensitive information.",
+        "The package uses `spawn` and `execSync` to execute a shell script, which can be used to run arbitrary code on the system.",
+        "The package includes an install script (`install_script` signal), which could be used to perform malicious actions during installation.",
+        "The package executes a process (`B_CODE_PROCESS_EXECUTION` signal), which could be used to perform malicious actions on the system."
+      ],
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 71.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "react-server-dom-turbopack-experimental",
+      "version": "10.0.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "Executes a process using `child_process.exec`",
+        "Involves reading sensitive system files like `/etc/passwd` and `/etc/shadow`",
+        "Sends potentially sensitive data over HTTP",
+        "Uses `base64` encoding and `tr -d '\\n'` to obfuscate data",
+        "Lacks proper input validation and sanitization"
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 45.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "com.unity.test-framework.build",
+      "version": "10.0.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package contains untrusted code.",
+        "The signal 'install_script' is present, which may indicate malicious intent.",
+        "The score is very high, suggesting a strong likelihood of malicious activity.",
+        "The signal contribution for 'install_script' is significantly high, further supporting suspicion."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 30.3
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "pytorch-pandas",
+      "version": "14.19.3",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes a network request to download an executable from a Discord attachment.",
+        "The code executes a downloaded executable using `subprocess.call`, which could be malicious.",
+        "The code is similar to known malware, as indicated by the `B_CODE_KNOWN_MALWARE_SIMILAR` signal.",
+        "The use of `subprocess.call` without proper validation or sandboxing is concerning.",
+        "The code attempts to download and execute a file from an untrusted source."
+      ],
+      "evidence_items": 3,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 57.8
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "aem-headless-web-component",
+      "version": "5.0.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes dynamic network requests, which could be used for malicious purposes.",
+        "The code is similar to known malware, indicating potential malicious intent.",
+        "The use of untrusted code within specific tags suggests a security risk.",
+        "The package version is outdated, which could indicate a lack of security updates.",
+        "The presence of tracking data collection suggests potential privacy concerns."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 39.1
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "flame-monorepo",
+      "version": "1.0.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package contains an install script, which can be a potential entry point for malicious code.",
+        "The score is very high, indicating a strong likelihood of malicious activity.",
+        "The signal contribution from the install script is significantly high, suggesting it plays a crucial role in the package's behavior.",
+        "Untrusted code is present, which could be manipulated to perform malicious actions."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 31.5
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "yandex-lego",
+      "version": "5.0.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes network requests, which could be used for malicious purposes.",
+        "The code is similar to known malware, indicating potential malicious intent.",
+        "The use of untrusted code within the package is concerning.",
+        "The package version is outdated and may contain vulnerabilities.",
+        "The package is not from a trusted source."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 35.4
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "expense-management",
+      "version": "99.9.2",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes dynamic network requests, which could be used for malicious purposes.",
+        "The code is similar to known malware, indicating potential malicious intent."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 28.5
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "mnolith",
+      "version": "912.6",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes dynamic network requests, which could be used for malicious purposes.",
+        "The code is similar to known malware, indicating potential malicious intent."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 31.2
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "nurset",
+      "version": "99.7",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes dynamic network requests, which could be used for malicious purposes.",
+        "The code is similar to known malware, indicating potential malicious intent."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 30.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "reeuests",
+      "version": "",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes dynamic network requests to 'http://35.235.126.33/all.txt' and other URLs, which could be used for malicious purposes.",
+        "The code executes downloaded files using `os.system`, which can lead to arbitrary code execution if the files are malicious.",
+        "The code appears to be modifying the behavior of the `requests` library to include network requests and file execution, which is unusual and potentially malicious.",
+        "The presence of a lookalike name suggests that the code might be trying to mimic or bypass security checks.",
+        "The code is making network requests and executing processes, which are high-risk operations that should be carefully reviewed."
+      ],
+      "evidence_items": 15,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 196.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "lina-ragi30-sluey",
+      "version": "4.4.2",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code attempts to execute a process using `child_process.exec`, which could be used for malicious purposes.",
+        "The code is similar to known malware, specifically `erwin-tapai20-riris@1.2.4`, indicating potential malicious intent.",
+        "The code contains a list of Indonesian names and foods, which could be used for data exfiltration or other malicious activities.",
+        "The code is untrusted and originates from an untrusted source, increasing the risk of malicious manipulation.",
+        "The signal `B_CODE_PROCESS_EXECUTION` indicates that the code is attempting to execute a process, which is a red flag for potential malicious activity."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 72.6
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "perlreq",
+      "version": "",
+      "assessment": "suspicious",
+      "reasons": [
+        "Dynamic eval is used, which can execute arbitrary code.",
+        "The code imports and uses `zlib` and `base64` modules, which could be used to decode and execute malicious payloads.",
+        "The code is embedded in a lambda function and executed immediately, indicating potential malicious intent.",
+        "The code is not from a trusted source, as it is marked as untrusted.",
+        "The code contains a large, obfuscated string that could be a payload or a key."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 89.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "tomi-lapis21-sluey",
+      "version": "2.3.3",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code attempts to execute a process using `child_process.exec`, which could be used for malicious purposes.",
+        "The code is similar to known malware, specifically `erwin-tapai20-riris@1.2.4`, indicating potential malicious intent.",
+        "The code contains a list of Indonesian names and foods, which could be used for data exfiltration or other malicious activities.",
+        "The code is untrusted and originates from an untrusted source, increasing the risk of malicious manipulation.",
+        "The signal `B_CODE_PROCESS_EXECUTION` is present, indicating that the code is attempting to execute an external process, which is a red flag."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 72.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "spl-types",
+      "version": "1.0.4",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes a dynamic network request to an external API, which could be used for malicious purposes.",
+        "The code is similar to known malware, raising concerns about potential malicious intent.",
+        "The use of external libraries like `requests` and `borsh_construct` suggests the code may be attempting to interact with external systems in a way that could be exploited.",
+        "The presence of untrusted code within `<untrusted-8bd5cfa5eeb6f510>` tags indicates that the code has not been thoroughly reviewed for potential malicious activity.",
+        "The signal contribution for `B_CODE_DYNAMIC_NETWORK_REQUEST` is positive, indicating that the code is likely making network requests, which could be used for malicious purposes."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 57.7
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "maya-papeda13-miaww",
+      "version": "2.1.2",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code attempts to execute a process using `child_process.exec`, which could be used for malicious purposes.",
+        "The code is similar to known malware, specifically `erwin-tapai20-riris@1.2.4`, indicating potential malicious intent.",
+        "The code contains lists of Indonesian names and foods, which could be used for phishing or other malicious activities.",
+        "The code is untrusted and originates from an untrusted source, increasing the risk of malicious manipulation.",
+        "The signal `B_CODE_PROCESS_EXECUTION` is present, indicating that the code is attempting to execute an external process, which is a red flag."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 71.9
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "easydicts",
+      "version": "94.6",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes network requests to a URL constructed with user-provided data, which could be used for exfiltration.",
+        "The code executes external processes (`getmac` and `ifconfig`) which could be used for malicious purposes.",
+        "The code is similar to known malware, which raises concerns about potential malicious intent.",
+        "The code does not have proper input validation or sanitization for the network request parameters."
+      ],
+      "evidence_items": 5,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 55.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "compromised_lib",
+      "label": 1,
+      "name": "@orbitgtbelgium/mapbox-gl-draw-scale-rotate-mode",
+      "version": "1.1.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package uses `execSync` to execute shell commands, which can be dangerous if not properly sanitized.",
+        "The package collects the entire environment (`env: { ...process.env }`) before executing a command, which could expose sensitive information.",
+        "The package includes a script to install `bun` using `curl`, which could be used to download and execute arbitrary code.",
+        "The package uses `spawn` and `execSync` without proper input validation, which could lead to command injection vulnerabilities.",
+        "The package executes a process with `stdio: 'ignore'`, which could hide errors or output."
+      ],
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 65.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "azure-mgmt-applicationinsights",
+      "version": "4.1.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "Use of `eval` function to execute dynamic code",
+        "Lack of proper input validation or sanitization",
+        "Potential for code injection attacks",
+        "Nosec comment bypassing linting rules",
+        "Dynamic evaluation of data types"
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 46.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "azure-ai-textanalytics",
+      "version": "5.4.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "Use of `eval` function to deserialize data, which can execute arbitrary code.",
+        "Lack of input validation or sanitization before evaluating the data type.",
+        "Potential for code injection if the input data is not controlled.",
+        "No security measures in place to mitigate risks associated with dynamic code execution.",
+        "The presence of `# nosec` comment suggests a deliberate decision to bypass security checks, which is concerning."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 54.6
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "sphinx-favicon",
+      "version": "1.1.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes a network request to a URL provided by the user.",
+        "This could be used to exfiltrate data or perform other malicious activities.",
+        "The code does not validate the URL, which could lead to security vulnerabilities.",
+        "The use of dynamic network requests is a common indicator of malicious software.",
+        "The code catches exceptions but does not handle them properly, which could lead to unexpected behavior."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 38.4
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "checkmk-dev-tools",
+      "version": "2.4.4",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code executes external processes using `check_output` with user-provided arguments, which can be dangerous if not properly sanitized.",
+        "The functions `runpath` and `is_elf` execute `objdump` and `file` commands, respectively, which could be used to extract sensitive information or execute arbitrary code.",
+        "The function `resolve_origin` uses `check_output` to execute `git` commands, which could be used to manipulate the repository or extract sensitive data.",
+        "The code does not appear to have any sandboxing or argument sanitization, which could allow for command injection attacks.",
+        "The use of `check_output` with user-provided arguments without proper validation is a common security risk."
+      ],
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 79.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "aiomoto",
+      "version": "0.5.9",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes a dynamic network request to a URL constructed from user input, which could be used for malicious purposes.",
+        "The request is made using `request.urlopen`, which is a potentially unsafe function for network operations.",
+        "The code does not validate the `health_url` before making the request, which could lead to security vulnerabilities.",
+        "The use of `timeout=2` might be too short for some network conditions, potentially leading to false negatives.",
+        "The exception handling is limited, which could allow the application to continue running even if the health check fails."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 45.5
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "pyocse",
+      "version": "0.1.6",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code uses `subprocess.run` with `shell=True`, which can execute arbitrary commands if the input is not properly sanitized.",
+        "The function `procrun` directly runs a command without any validation or sanitization, which is a significant security risk.",
+        "The code does not appear to be using a sandbox or restricting the execution environment, which could allow for privilege escalation or other malicious activities.",
+        "The use of `shell=True` can lead to command injection vulnerabilities if the input is not controlled.",
+        "The code does not handle potential errors or exceptions that could arise from the execution of the command."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 60.9
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "iterproxy",
+      "version": "0.3.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code uses `subprocess.run` to execute external processes, which can be a security risk if not properly sandboxed.",
+        "The arguments passed to `subprocess.run` include file paths and script names, which could be manipulated to execute arbitrary code.",
+        "The code does not appear to validate or sanitize the input arguments, which could lead to command injection vulnerabilities.",
+        "The use of `subprocess.run` without proper error handling could cause the program to crash or behave unpredictably.",
+        "The code does not appear to use a sandbox or restricted environment for executing external processes, which could allow the execution of malicious code."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 58.8
+    },
+    {
+      "ecosystem": "npm",
+      "category": "top_5000",
+      "label": 0,
+      "name": "workbox-strategies",
+      "version": "7.4.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes network requests using the `fetch` function, which could be used for malicious purposes.",
+        "The code includes conditional logic based on the environment, which could be used to bypass security measures.",
+        "The code clones the original request and passes it to the `fetch` function, which could be used to manipulate the request.",
+        "The code logs network request details, which could be used to track user activity.",
+        "The code is part of a larger software package, which could be used to manipulate the supply chain."
+      ],
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 90.4
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "dbt-spark",
+      "version": "1.11.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes network requests to a MCP server, which could be used for malicious purposes.",
+        "The requests are made using the `requests` library, which is a common library for making HTTP requests.",
+        "The code does not have any authentication or validation checks for the network requests, which could be exploited.",
+        "The code does not have any error handling for the network requests, which could lead to the application crashing or being compromised.",
+        "The code does not have any logging or monitoring for the network requests, which could make it difficult to detect any malicious activity."
+      ],
+      "evidence_items": 8,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 145.2
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "delocate",
+      "version": "0.13.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package uses `subprocess.run` to execute external commands like `patch`, `lipo`, and `test-lib`.",
+        "These commands are executed without proper sandboxing or validation of arguments, which could lead to arbitrary command execution.",
+        "The package includes tests that execute external binaries, which could be used to test for vulnerabilities.",
+        "The package uses `Popen` to execute `patch` with `text=True`, which could be used to manipulate the output of the command.",
+        "The package includes code that renames and modifies library files, which could be used to bypass security measures."
+      ],
+      "evidence_items": 20,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 195.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "ecpy",
+      "version": "1.2.5",
+      "assessment": "suspicious",
+      "reasons": [
+        "Dynamic evaluation of code using `eval` is used to create `hashlib` objects, which can be dangerous if the input is not properly validated.",
+        "The code does not appear to sanitize or validate the input to `eval`, which could allow for arbitrary code execution.",
+        "The use of `eval` in a loop could lead to performance issues and potential DoS attacks if the input is not controlled.",
+        "The code does not provide any context or documentation on why dynamic evaluation is necessary, raising concerns about its safety and purpose.",
+        "The presence of untrusted code tags suggests that this part of the code may have been added by an untrusted source, increasing the risk of malicious intent."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 65.9
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "libify",
+      "version": "0.78",
+      "assessment": "suspicious",
+      "reasons": [
+        "Dynamic code execution using `exec` is present, which can be dangerous if the input is not properly validated.",
+        "The code reads and executes data from a file, which could be manipulated to execute arbitrary code.",
+        "The use of `Fernet` for decryption suggests that the code is trying to securely load and execute code, but the surrounding context is suspicious.",
+        "The code does not provide sufficient context to determine if the input is trusted or if there are any safeguards in place to prevent code injection.",
+        "The presence of untrusted code tags indicates that the code may be malicious or intentionally obfuscated."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 57.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "suds",
+      "version": "1.2.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes dynamic network requests, which could be used for malicious purposes.",
+        "The destination of these requests is not controlled by the review process.",
+        "The code uses untrusted libraries (`urllib.request`), which could be manipulated.",
+        "The presence of `<untrusted-7be036c5c97cc4d5>` tags indicates potential malicious code.",
+        "The score and signal contributions suggest a higher likelihood of malicious activity."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 52.5
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "python-tds",
+      "version": "1.17.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes a network request using a UDP socket, which could be used for malicious purposes.",
+        "The destination IP address and port are hardcoded, which could indicate a hardcoded C2 server.",
+        "The code does not validate the response, which could allow for injection attacks.",
+        "The code does not handle exceptions, which could allow for denial of service attacks.",
+        "The code does not use any form of encryption or authentication, which could allow for interception of the request."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 41.4
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "pytest-lazy-fixture",
+      "version": "0.6.3",
+      "assessment": "unclear",
+      "reasons": [
+        "The package name 'pytest-lazy-fixture' is not immediately suspicious, but the signal 'lookalike_name' indicates a potential similarity to a known malicious package name.",
+        "The score of 0.5726 is below the threshold for high suspicion, but above the threshold for clear benignity.",
+        "The signal contribution of 1.252 for 'lookalike_name' suggests a moderate likelihood of malicious intent, but it is not conclusive.",
+        "The presence of untrusted code within <untrusted-8283ae345fd2245c> tags indicates that the package may contain malicious code, but this is not definitive without further analysis.",
+        "The package version 0.6.3 is not immediately suspicious, but the overall context of the signals and score is unclear without more information."
+      ],
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 48.5
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "webdataset",
+      "version": "1.0.2",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package contains dynamic code evaluation using `eval`.",
+        "The package executes external processes using `subprocess.run`.",
+        "The code does not appear to be sandboxed or restricted in its execution.",
+        "The package includes a function that formats and evaluates strings as code.",
+        "The package has a history of signals indicating potential security risks."
+      ],
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 84.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "schemdraw",
+      "version": "0.23",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code uses `subprocess.call` to execute an external command, which can be a security risk if not properly sanitized.",
+        "The command is constructed based on the platform, which could be manipulated if the input is not validated.",
+        "The code does not handle potential errors or exceptions that could arise from the external command execution.",
+        "The use of `os.startfile` on Windows is not secure and can be exploited if the input is not properly sanitized."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 39.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "qwen-omni-utils",
+      "version": "0.0.9",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes dynamic network requests, which could be used for malicious purposes.",
+        "The destination of these requests is not controlled by the review process.",
+        "The code uses untrusted input (`image`) to make requests, which could lead to security vulnerabilities.",
+        "The use of `requests.get` without proper validation or sanitization is concerning.",
+        "The code dynamically imports and uses external libraries (`requests`, `BytesIO`, `Image`), which could be manipulated."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 42.5
+    },
+    {
+      "ecosystem": "npm",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "@firebase/vertexai",
+      "version": "1.2.4",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes dynamic network requests, which could be used for malicious purposes.",
+        "The code uses the `fetch` function, which can be intercepted or manipulated.",
+        "The package is from an untrusted source, as indicated by the `<untrusted-ad3a6f1f51ec569b>` tags.",
+        "The network requests are not controlled by the destination, which could lead to unauthorized data transmission.",
+        "The package version is 1.2.4, which may not be the latest, potentially leaving it vulnerable to known issues."
+      ],
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 87.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "top_5000",
+      "label": 0,
+      "name": "@electric-sql/pglite-socket",
+      "version": "0.2.17",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package collects the entire environment, which could be used for information leakage.",
+        "The package executes processes, which could be used for malicious activities.",
+        "The package uses untrusted code, which could be manipulated.",
+        "The package has multiple instances of process execution and environment harvesting, indicating potential malicious intent.",
+        "The package has a high score and positive signal contributions, suggesting a higher likelihood of malicious activity."
+      ],
+      "evidence_items": 7,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 116.1
+    },
+    {
+      "ecosystem": "npm",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "@remotion/renderer",
+      "version": "4.0.539",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package uses `new Function` to evaluate strings as code, which can be a security risk if the input is not properly sanitized.",
+        "The package executes external processes using `child_process.execSync`, which can lead to command injection if not properly sandboxed.",
+        "The package dynamically evaluates and executes functions passed as arguments, which can be exploited if the functions are not trusted.",
+        "The package uses `eval` indirectly through `new Function`, which is generally discouraged due to security concerns.",
+        "The package executes system commands to retrieve memory information, which could be used for privilege escalation or other malicious activities."
+      ],
+      "evidence_items": 13,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 213.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "pytest-codeblocks",
+      "version": "0.18.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "Dynamic evaluation of code using `eval` at line 39, which can execute arbitrary code.",
+        "Execution of code using `exec` at line 62, which can execute arbitrary code.",
+        "Process execution using `subprocess.run` at line 78, which can execute arbitrary commands.",
+        "Untrusted code is present within `<untrusted-a819417d9d3cba31>` tags, indicating potential malicious content.",
+        "The package signals high suspicion due to the presence of dynamic code execution and process execution."
+      ],
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 67.2
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "django-jsoneditor",
+      "version": "0.2.4",
+      "assessment": "suspicious",
+      "reasons": [
+        "Dynamic code evaluation using `new Function` is a red flag.",
+        "The code is processing untrusted input (`sourceCode`) and evaluating it as code.",
+        "The presence of `<untrusted-911d2dc492e08a0b>` tags indicates untrusted code.",
+        "The signal `B_CODE_DYNAMIC_EVAL` is present, indicating potential malicious code.",
+        "The score is below 0.5, suggesting a low confidence in the code being benign."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 42.8
+    },
+    {
+      "ecosystem": "npm",
+      "category": "top_5000",
+      "label": 0,
+      "name": "teeny-request",
+      "version": "11.1.1",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes dynamic network requests using the `fetch` function.",
+        "The destination of these requests is not controlled by the user, which could be a security risk.",
+        "The code imports `node-fetch` dynamically, which could be used to bypass certain security checks.",
+        "The package uses a custom `fetch` implementation that could be manipulated to perform malicious actions.",
+        "The code includes a `RequestError` class, which could be used to handle errors in a way that could be exploited."
+      ],
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 76.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "invoke",
+      "version": "3.0.3",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code uses `os.execvpe` and `subprocess.Popen` to execute commands, which can be dangerous if not properly sanitized.",
+        "The use of `shell=True` in `subprocess.Popen` can lead to command injection vulnerabilities.",
+        "The code does not provide sufficient evidence to determine if the input is properly sanitized or if the environment is controlled.",
+        "The presence of untrusted code tags suggests that this part of the code may be user-provided or from an untrusted source."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 43.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "lusid-sdk",
+      "version": "2.3.325",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code makes network requests to an Okta server, which could be used for malicious purposes if not properly controlled.",
+        "The code uses untrusted input (`token_request_body` and `request_body`) for the network request, which could lead to injection attacks.",
+        "The code does not validate the response from the Okta server, which could allow for man-in-the-middle attacks.",
+        "The code does not handle exceptions that may occur during the network request, which could lead to crashes or security vulnerabilities.",
+        "The code does not log the network request or response, which could make it difficult to detect and respond to potential security incidents."
+      ],
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 63.6
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "mozilla-django-oidc",
+      "version": "5.0.2",
+      "assessment": "suspicious",
+      "reasons": [
+        "The package makes network requests to external endpoints (JWKS, token, and userinfo endpoints) without proper validation or control.",
+        "The use of `requests.get` and `requests.post` without explicit validation of the destination can be risky.",
+        "The package does not appear to implement any checks to ensure the endpoints are trusted or controlled by the user.",
+        "The package uses `HTTPBasicAuth` for authentication, which can expose sensitive credentials if not handled securely.",
+        "The package does not provide any mechanism to review or control the network requests it makes."
+      ],
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 96.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "esphome-glyphsets",
+      "version": "0.2.0",
+      "assessment": "suspicious",
+      "reasons": [
+        "Executes a process using `os.popen` which can be dangerous if not properly sanitized.",
+        "The process executed is `pip index versions gflanguages`, which could be used to exploit the system if not controlled.",
+        "The script does not validate or sanitize the output of the process, which could lead to injection attacks.",
+        "The script is running in a potentially untrusted environment, as indicated by the `<untrusted-2ed862e2743e6e51>` tags."
+      ],
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 118.9
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "aiofastnet",
+      "version": "1.2.0",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "clusterscope",
+      "version": "0.0.32",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "evidence_items": 12,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.0
+    }
+  ]
+}

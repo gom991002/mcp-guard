@@ -1,0 +1,217 @@
+{
+ "rule": "D6-46 rule, unchanged: on training-only 10-fold out-of-fold predictions, the\nlowest PyPI threshold whose PyPI benign false-positive rate is at most 0.15\n(the most recall within that limit); npm keeps the global threshold. The\ntest part is read once, for the report. The winners' settings come from\ngrid_report.json; the folds and split are train.py's.",
+ "with_guarddog": {
+  "family": "gradient_boosting",
+  "global_threshold": 0.809235,
+  "pypi_threshold": 0.723554,
+  "cv_pypi": {
+   "tp": 244,
+   "fp": 94,
+   "fn": 89,
+   "tn": 546,
+   "precision": 0.7219,
+   "recall": 0.7327,
+   "false_positive_rate": 0.1469,
+   "f1": 0.7273
+  },
+  "test_all": {
+   "tp": 155,
+   "fp": 41,
+   "fn": 28,
+   "tn": 275,
+   "precision": 0.7908,
+   "recall": 0.847,
+   "false_positive_rate": 0.1297,
+   "f1": 0.8179
+  },
+  "test_pypi": {
+   "tp": 70,
+   "fp": 37,
+   "fn": 13,
+   "tn": 123,
+   "precision": 0.6542,
+   "recall": 0.8434,
+   "false_positive_rate": 0.2313,
+   "f1": 0.7368
+  },
+  "test_npm": {
+   "tp": 85,
+   "fp": 4,
+   "fn": 15,
+   "tn": 152,
+   "precision": 0.9551,
+   "recall": 0.85,
+   "false_positive_rate": 0.0256,
+   "f1": 0.8995
+  },
+  "test_pypi_global_threshold_only": {
+   "tp": 37,
+   "fp": 16,
+   "fn": 46,
+   "tn": 144,
+   "precision": 0.6981,
+   "recall": 0.4458,
+   "false_positive_rate": 0.1,
+   "f1": 0.5441
+  },
+  "test_pypi_by_group": {
+   "0/random": 0.3115,
+   "0/rank_5001_plus": 0.2063,
+   "0/top_5000": 0.1389,
+   "1/compromised_lib": 1.0,
+   "1/malicious_intent": 0.8395
+  }
+ },
+ "without_guarddog": {
+  "family": "gradient_boosting",
+  "global_threshold": 0.742736,
+  "pypi_threshold": 0.498573,
+  "cv_pypi": {
+   "tp": 207,
+   "fp": 93,
+   "fn": 126,
+   "tn": 547,
+   "precision": 0.69,
+   "recall": 0.6216,
+   "false_positive_rate": 0.1453,
+   "f1": 0.654
+  },
+  "test_all": {
+   "tp": 142,
+   "fp": 40,
+   "fn": 41,
+   "tn": 276,
+   "precision": 0.7802,
+   "recall": 0.776,
+   "false_positive_rate": 0.1266,
+   "f1": 0.7781
+  },
+  "test_pypi": {
+   "tp": 54,
+   "fp": 33,
+   "fn": 29,
+   "tn": 127,
+   "precision": 0.6207,
+   "recall": 0.6506,
+   "false_positive_rate": 0.2062,
+   "f1": 0.6353
+  },
+  "test_npm": {
+   "tp": 88,
+   "fp": 7,
+   "fn": 12,
+   "tn": 149,
+   "precision": 0.9263,
+   "recall": 0.88,
+   "false_positive_rate": 0.0449,
+   "f1": 0.9026
+  },
+  "test_pypi_global_threshold_only": {
+   "tp": 26,
+   "fp": 22,
+   "fn": 57,
+   "tn": 138,
+   "precision": 0.5417,
+   "recall": 0.3133,
+   "false_positive_rate": 0.1375,
+   "f1": 0.3969
+  },
+  "test_pypi_by_group": {
+   "0/random": 0.3443,
+   "0/rank_5001_plus": 0.1746,
+   "0/top_5000": 0.0278,
+   "1/compromised_lib": 0.0,
+   "1/malicious_intent": 0.6667
+  }
+ },
+ "guarddog_alone_test": {
+  "guarddog_high_risk": {
+   "pypi": {
+    "tp": 30,
+    "fp": 10,
+    "fn": 53,
+    "tn": 150,
+    "precision": 0.75,
+    "recall": 0.3614,
+    "false_positive_rate": 0.0625,
+    "f1": 0.4878
+   },
+   "npm": {
+    "tp": 64,
+    "fp": 8,
+    "fn": 36,
+    "tn": 148,
+    "precision": 0.8889,
+    "recall": 0.64,
+    "false_positive_rate": 0.0513,
+    "f1": 0.7442
+   }
+  },
+  "guarddog_suspicious_or_high": {
+   "pypi": {
+    "tp": 32,
+    "fp": 12,
+    "fn": 51,
+    "tn": 148,
+    "precision": 0.7273,
+    "recall": 0.3855,
+    "false_positive_rate": 0.075,
+    "f1": 0.5039
+   },
+   "npm": {
+    "tp": 70,
+    "fp": 9,
+    "fn": 30,
+    "tn": 147,
+    "precision": 0.8861,
+    "recall": 0.7,
+    "false_positive_rate": 0.0577,
+    "f1": 0.7821
+   }
+  },
+  "guarddog_any_threat_rule": {
+   "pypi": {
+    "tp": 33,
+    "fp": 19,
+    "fn": 50,
+    "tn": 141,
+    "precision": 0.6346,
+    "recall": 0.3976,
+    "false_positive_rate": 0.1187,
+    "f1": 0.4889
+   },
+   "npm": {
+    "tp": 77,
+    "fp": 16,
+    "fn": 23,
+    "tn": 140,
+    "precision": 0.828,
+    "recall": 0.77,
+    "false_positive_rate": 0.1026,
+    "f1": 0.7979
+   }
+  },
+  "guarddog_any_finding": {
+   "pypi": {
+    "tp": 44,
+    "fp": 87,
+    "fn": 39,
+    "tn": 73,
+    "precision": 0.3359,
+    "recall": 0.5301,
+    "false_positive_rate": 0.5437,
+    "f1": 0.4112
+   },
+   "npm": {
+    "tp": 81,
+    "fp": 71,
+    "fn": 19,
+    "tn": 85,
+    "precision": 0.5329,
+    "recall": 0.81,
+    "false_positive_rate": 0.4551,
+    "f1": 0.6429
+   }
+  }
+ }
+}

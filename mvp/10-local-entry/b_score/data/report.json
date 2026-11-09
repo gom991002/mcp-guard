@@ -1,0 +1,544 @@
+{
+  "rows": 2495,
+  "excluded_no_installable_files": 0,
+  "excluded_av_blocked": 0,
+  "train": {
+    "n": 1996,
+    "malicious": 733
+  },
+  "test": {
+    "n": 499,
+    "malicious": 183
+  },
+  "cv": {
+    "0.001": {
+      "pr_auc": 0.88,
+      "roc_auc": 0.9052
+    },
+    "0.01": {
+      "pr_auc": 0.8807,
+      "roc_auc": 0.9053
+    },
+    "0.1": {
+      "pr_auc": 0.8809,
+      "roc_auc": 0.9053
+    },
+    "1.0": {
+      "pr_auc": 0.8809,
+      "roc_auc": 0.9056
+    },
+    "10.0": {
+      "pr_auc": 0.8782,
+      "roc_auc": 0.9031
+    }
+  },
+  "lambda": 1.0,
+  "record_only_signals": [
+    "B_CODE_DYNAMIC_EVAL",
+    "B_CODE_ENV_HARVEST"
+  ],
+  "thresholds_from_cv": {
+    "f1_max": 0.3701,
+    "youden_j": 0.3701,
+    "keep_rule_recall": 0.5852,
+    "keep_new_rule_recall": 0.075
+  },
+  "previous_rule_cv": {
+    "tp": 480,
+    "fp": 281,
+    "fn": 253,
+    "tn": 982,
+    "precision": 0.6307,
+    "recall": 0.6548,
+    "false_positive_rate": 0.2225,
+    "f1": 0.6426
+  },
+  "candidates_cv": {
+    "rule": {
+      "tp": 692,
+      "fp": 785,
+      "fn": 41,
+      "tn": 478,
+      "precision": 0.4685,
+      "recall": 0.9441,
+      "false_positive_rate": 0.6215,
+      "f1": 0.6262
+    },
+    "model_keep_previous_recall": {
+      "tp": 483,
+      "fp": 69,
+      "fn": 250,
+      "tn": 1194,
+      "precision": 0.875,
+      "recall": 0.6589,
+      "false_positive_rate": 0.0546,
+      "f1": 0.7518
+    },
+    "model_keep_new_rule_recall": {
+      "tp": 695,
+      "fp": 741,
+      "fn": 38,
+      "tn": 522,
+      "precision": 0.484,
+      "recall": 0.9482,
+      "false_positive_rate": 0.5867,
+      "f1": 0.6408
+    }
+  },
+  "rule_cv": {
+    "tp": 692,
+    "fp": 785,
+    "fn": 41,
+    "tn": 478,
+    "precision": 0.4685,
+    "recall": 0.9441,
+    "false_positive_rate": 0.6215,
+    "f1": 0.6262
+  },
+  "model_cv_at_rule_recall": {
+    "tp": 483,
+    "fp": 69,
+    "fn": 250,
+    "tn": 1194,
+    "precision": 0.875,
+    "recall": 0.6589,
+    "false_positive_rate": 0.0546,
+    "f1": 0.7518
+  },
+  "decision": "model",
+  "chosen": "model_keep_previous_recall",
+  "without_guarddog": {
+    "chosen": "model_keep_previous_recall",
+    "candidates_cv": {
+      "rule": {
+        "tp": 648,
+        "fp": 427,
+        "fn": 85,
+        "tn": 836,
+        "precision": 0.6028,
+        "recall": 0.884,
+        "false_positive_rate": 0.3381,
+        "f1": 0.7168
+      },
+      "model_keep_previous_recall": {
+        "tp": 489,
+        "fp": 115,
+        "fn": 244,
+        "tn": 1148,
+        "precision": 0.8096,
+        "recall": 0.6671,
+        "false_positive_rate": 0.0911,
+        "f1": 0.7315
+      },
+      "model_keep_new_rule_recall": {
+        "tp": 649,
+        "fp": 493,
+        "fn": 84,
+        "tn": 770,
+        "precision": 0.5683,
+        "recall": 0.8854,
+        "false_positive_rate": 0.3903,
+        "f1": 0.6923
+      }
+    },
+    "pr_auc": 0.8316,
+    "pr_auc_ci95": [
+      0.7919,
+      0.8715
+    ],
+    "roc_auc": 0.877,
+    "test_decision": {
+      "tp": 114,
+      "fp": 35,
+      "fn": 69,
+      "tn": 281,
+      "precision": 0.7651,
+      "recall": 0.623,
+      "false_positive_rate": 0.1108,
+      "f1": 0.6867
+    },
+    "test_flag_rate_by_group": {
+      "0/npm/random": 0.2903,
+      "0/npm/rank_5001_plus": 0.0204,
+      "0/npm/top_5000": 0.0,
+      "0/pypi/random": 0.2787,
+      "0/pypi/rank_5001_plus": 0.1111,
+      "0/pypi/top_5000": 0.0,
+      "1/npm/compromised_lib": 0.7619,
+      "1/npm/malicious_intent": 0.9367,
+      "1/pypi/compromised_lib": 0.0,
+      "1/pypi/malicious_intent": 0.2963
+    }
+  },
+  "test_metrics": {
+    "model": {
+      "pr_auc": 0.8649,
+      "pr_auc_ci95": [
+        0.8268,
+        0.898
+      ],
+      "roc_auc": 0.9133,
+      "roc_auc_ci95": [
+        0.8873,
+        0.9384
+      ],
+      "brier": 0.1063,
+      "mean_probability": 0.387,
+      "malicious_share": 0.3667
+    },
+    "signal_count": {
+      "pr_auc": 0.7621,
+      "pr_auc_ci95": [
+        0.714,
+        0.8038
+      ],
+      "roc_auc": 0.8365
+    }
+  },
+  "test_decisions": {
+    "rule_review_signals": {
+      "tp": 177,
+      "fp": 200,
+      "fn": 6,
+      "tn": 116,
+      "precision": 0.4695,
+      "recall": 0.9672,
+      "false_positive_rate": 0.6329,
+      "f1": 0.6321
+    },
+    "previous_rule": {
+      "tp": 120,
+      "fp": 68,
+      "fn": 63,
+      "tn": 248,
+      "precision": 0.6383,
+      "recall": 0.6557,
+      "false_positive_rate": 0.2152,
+      "f1": 0.6469
+    },
+    "chosen": {
+      "tp": 128,
+      "fp": 32,
+      "fn": 55,
+      "tn": 284,
+      "precision": 0.8,
+      "recall": 0.6995,
+      "false_positive_rate": 0.1013,
+      "f1": 0.7464
+    },
+    "rule_any_signal_new_rules": {
+      "tp": 177,
+      "fp": 200,
+      "fn": 6,
+      "tn": 116,
+      "precision": 0.4695,
+      "recall": 0.9672,
+      "false_positive_rate": 0.6329,
+      "f1": 0.6321
+    },
+    "rule_any_signal_old_rules": {
+      "tp": 112,
+      "fp": 57,
+      "fn": 71,
+      "tn": 259,
+      "precision": 0.6627,
+      "recall": 0.612,
+      "false_positive_rate": 0.1804,
+      "f1": 0.6364
+    },
+    "model_f1_max": {
+      "tp": 164,
+      "fp": 60,
+      "fn": 19,
+      "tn": 256,
+      "precision": 0.7321,
+      "recall": 0.8962,
+      "false_positive_rate": 0.1899,
+      "f1": 0.8059
+    },
+    "model_youden_j": {
+      "tp": 164,
+      "fp": 60,
+      "fn": 19,
+      "tn": 256,
+      "precision": 0.7321,
+      "recall": 0.8962,
+      "false_positive_rate": 0.1899,
+      "f1": 0.8059
+    },
+    "model_keep_rule_recall": {
+      "tp": 128,
+      "fp": 32,
+      "fn": 55,
+      "tn": 284,
+      "precision": 0.8,
+      "recall": 0.6995,
+      "false_positive_rate": 0.1013,
+      "f1": 0.7464
+    },
+    "model_keep_new_rule_recall": {
+      "tp": 174,
+      "fp": 98,
+      "fn": 9,
+      "tn": 218,
+      "precision": 0.6397,
+      "recall": 0.9508,
+      "false_positive_rate": 0.3101,
+      "f1": 0.7648
+    }
+  },
+  "test_recall_by_group": {
+    "npm/compromised_lib": {
+      "n": 21,
+      "model": 0.8095,
+      "previous_rule": 0.7143
+    },
+    "npm/malicious_intent": {
+      "n": 79,
+      "model": 0.9114,
+      "previous_rule": 0.8481
+    },
+    "pypi/compromised_lib": {
+      "n": 2,
+      "model": 1.0,
+      "previous_rule": 0.0
+    },
+    "pypi/malicious_intent": {
+      "n": 81,
+      "model": 0.4568,
+      "previous_rule": 0.4691
+    },
+    "benign/npm/random": {
+      "n": 31,
+      "model_flag_rate": 0.3871,
+      "previous_rule_flag_rate": 0.1935
+    },
+    "benign/npm/rank_5001_plus": {
+      "n": 98,
+      "model_flag_rate": 0.0102,
+      "previous_rule_flag_rate": 0.0816
+    },
+    "benign/npm/top_5000": {
+      "n": 27,
+      "model_flag_rate": 0.0,
+      "previous_rule_flag_rate": 0.0741
+    },
+    "benign/pypi/random": {
+      "n": 61,
+      "model_flag_rate": 0.1639,
+      "previous_rule_flag_rate": 0.3115
+    },
+    "benign/pypi/rank_5001_plus": {
+      "n": 63,
+      "model_flag_rate": 0.0794,
+      "previous_rule_flag_rate": 0.3492
+    },
+    "benign/pypi/top_5000": {
+      "n": 36,
+      "model_flag_rate": 0.1111,
+      "previous_rule_flag_rate": 0.3056
+    },
+    "discovered/older": {
+      "n": 146,
+      "from": "2022-11-03",
+      "chosen": 0.6781,
+      "previous_rule": 0.6781
+    },
+    "discovered/newest_fifth": {
+      "n": 37,
+      "from": "2025-11-24",
+      "chosen": 0.7838,
+      "previous_rule": 0.5676
+    }
+  },
+  "permutation_importance": {
+    "meta_no_repository": {
+      "mean": 0.1006,
+      "sd": 0.0061
+    },
+    "install_script": {
+      "mean": 0.0553,
+      "sd": 0.0144
+    },
+    "GD_RISK_HIGH": {
+      "mean": 0.0399,
+      "sd": 0.009
+    },
+    "B_CODE_IMPORT_TIME_EXECUTION": {
+      "mean": 0.0086,
+      "sd": 0.0053
+    },
+    "GD_THREAT": {
+      "mean": 0.0054,
+      "sd": 0.005
+    },
+    "lookalike_name": {
+      "mean": 0.0044,
+      "sd": 0.0026
+    },
+    "GD_RISK_SUSPICIOUS": {
+      "mean": 0.0011,
+      "sd": 0.001
+    },
+    "meta_no_readme": {
+      "mean": 0.0009,
+      "sd": 0.0028
+    },
+    "B_CODE_DECODE_AND_EXECUTE": {
+      "mean": 0.0006,
+      "sd": 0.001
+    },
+    "ships_pth": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "B_CODE_DYNAMIC_EVAL": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "B_CODE_ENV_HARVEST": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "B_CODE_PROCESS_EXECUTION": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "B_CODE_SECRET_FILE_READ": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "meta_no_description": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "meta_no_license": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "meta_release_zero": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "GD_CAPABILITY": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "GD_RISK_LOW": {
+      "mean": 0.0,
+      "sd": 0.0
+    },
+    "B_CODE_DYNAMIC_NETWORK_REQUEST": {
+      "mean": -0.0008,
+      "sd": 0.0012
+    }
+  },
+  "mean_abs_contribution_log_odds": {
+    "meta_no_repository": 1.1205,
+    "GD_RISK_HIGH": 0.6683,
+    "install_script": 0.5855,
+    "GD_THREAT": 0.3567,
+    "meta_no_readme": 0.2307,
+    "B_CODE_IMPORT_TIME_EXECUTION": 0.1926,
+    "lookalike_name": 0.0866,
+    "GD_RISK_SUSPICIOUS": 0.0328,
+    "B_CODE_DYNAMIC_NETWORK_REQUEST": 0.0148,
+    "B_CODE_DECODE_AND_EXECUTE": 0.0101,
+    "ships_pth": 0.0,
+    "B_CODE_DYNAMIC_EVAL": 0.0,
+    "B_CODE_ENV_HARVEST": 0.0,
+    "B_CODE_PROCESS_EXECUTION": 0.0,
+    "B_CODE_SECRET_FILE_READ": 0.0,
+    "meta_no_description": 0.0,
+    "meta_no_license": 0.0,
+    "meta_release_zero": 0.0,
+    "GD_CAPABILITY": 0.0,
+    "GD_RISK_LOW": 0.0
+  },
+  "prevalence": {
+    "lookalike_name": {
+      "malicious": 0.0306,
+      "benign": 0.0108
+    },
+    "install_script": {
+      "malicious": 0.3275,
+      "benign": 0.0032
+    },
+    "ships_pth": {
+      "malicious": 0.0,
+      "benign": 0.0025
+    },
+    "B_CODE_DECODE_AND_EXECUTE": {
+      "malicious": 0.0109,
+      "benign": 0.0
+    },
+    "B_CODE_DYNAMIC_EVAL": {
+      "malicious": 0.0644,
+      "benign": 0.0665
+    },
+    "B_CODE_DYNAMIC_NETWORK_REQUEST": {
+      "malicious": 0.2522,
+      "benign": 0.1096
+    },
+    "B_CODE_ENV_HARVEST": {
+      "malicious": 0.0186,
+      "benign": 0.0222
+    },
+    "B_CODE_IMPORT_TIME_EXECUTION": {
+      "malicious": 0.179,
+      "benign": 0.0139
+    },
+    "B_CODE_PROCESS_EXECUTION": {
+      "malicious": 0.2544,
+      "benign": 0.1001
+    },
+    "B_CODE_SECRET_FILE_READ": {
+      "malicious": 0.0033,
+      "benign": 0.0013
+    },
+    "meta_no_description": {
+      "malicious": 0.2893,
+      "benign": 0.0703
+    },
+    "meta_no_repository": {
+      "malicious": 0.6397,
+      "benign": 0.1013
+    },
+    "meta_no_license": {
+      "malicious": 0.1867,
+      "benign": 0.0583
+    },
+    "meta_release_zero": {
+      "malicious": 0.0317,
+      "benign": 0.0025
+    },
+    "meta_no_readme": {
+      "malicious": 0.3821,
+      "benign": 0.0602
+    },
+    "GD_CAPABILITY": {
+      "malicious": 0.6026,
+      "benign": 0.5117
+    },
+    "GD_THREAT": {
+      "malicious": 0.5808,
+      "benign": 0.1121
+    },
+    "GD_RISK_LOW": {
+      "malicious": 0.0633,
+      "benign": 0.0576
+    },
+    "GD_RISK_SUSPICIOUS": {
+      "malicious": 0.0459,
+      "benign": 0.0089
+    },
+    "GD_RISK_HIGH": {
+      "malicious": 0.4716,
+      "benign": 0.0418
+    }
+  },
+  "pypi_setup_py_only": {
+    "malicious": 416,
+    "no_feature_but_setup_py_hit": 32
+  }
+}

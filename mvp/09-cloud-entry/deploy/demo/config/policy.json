@@ -1,0 +1,34 @@
+{
+  "trusted_namespaces": [
+    "demo"
+  ],
+  "trusted_registry_publishers": [],
+  "protected_tool_names": [
+    "send_email"
+  ],
+  "suspicious_phrases": [
+    "ignore previous instructions"
+  ],
+  "registered_servers": [
+    "docs",
+    "mail"
+  ],
+  "trusted_sources": [
+    "gateway"
+  ],
+  "approved_schema_hashes": {
+    "mail:read_inbox": "sha256:791ba91f68c5ed7585d0dc77e5301d323f41900ea2d0fa58be6982b808c85566",
+    "mail:send_email": "sha256:61f2d1e2a6a639762c2699e3f91162d40a10e549cf25cbfd5fa2e2395bec7b62",
+    "mail:get_time": "sha256:efddc7bd8bbcef73a14eb1ace1ffdaec81e518ef1e13c1e9271d0b8acb694a49",
+    "docs:search_docs": "sha256:1dc63095e8672403bbe40fa26719d175e695c0167f6daad6b9655f6506491f01"
+  },
+  "external_send_tools": [
+    "mail:send_email"
+  ],
+  "m4_value_policy": {
+    "internal_domains": [
+      "company.example"
+    ],
+    "allowed_url_hosts": []
+  }
+}

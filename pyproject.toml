@@ -1,0 +1,25 @@
+[project]
+name = "mcp-guard"
+version = "0.1.0"
+description = "Pre-connection guard scaffold for MCP tool impersonation defense."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+# Production ASGI server for the gateway (--server asgi, D6-28). The core and
+# the MVP code use only the standard library.
+server = ["uvicorn==0.54.0"]
+classifier = ["transformers", "huggingface_hub", "onnxruntime"]
+# Stage 1 B code scan (D6-30): Semgrep CE (LGPL-2.1) is run as a separate
+# process with our own rules only; it is not imported or bundled.
+codescan = ["semgrep==1.183.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mcp_guard = ["data/*.txt", "data/*.json"]
+

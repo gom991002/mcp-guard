@@ -1,0 +1,44 @@
+{
+  "servers": 28,
+  "tools": 755,
+  "attacks": 1508,
+  "rules": {
+    "A": {
+      "benign_hold_rate": 0.0795,
+      "benign_held": 60,
+      "benign_examples": [
+        "search_nodes contains search",
+        "knowledge_base_search contains search",
+        "search_astro_docs contains search",
+        "get_job_logs contains get_job",
+        "search_for_devices contains search",
+        "query_database contains query",
+        "NuGetPackageSearch contains search",
+        "web-search contains search",
+        "docs_query contains query",
+        "get_project_info contains get_project",
+        "query_data contains query",
+        "get_cluster_roles contains get_cluster",
+        "microsoft_code_sample_search contains search",
+        "microsoft_docs_search contains search",
+        "search_pages contains search"
+      ],
+      "recall_listed_affixes": 1.0,
+      "recall_unseen_affixes": 1.0
+    },
+    "B": {
+      "benign_hold_rate": 0.0,
+      "benign_held": 0,
+      "benign_examples": [],
+      "recall_listed_affixes": 1.0,
+      "recall_unseen_affixes": 0.0
+    },
+    "C": {
+      "benign_hold_rate": 0.0,
+      "benign_held": 0,
+      "benign_examples": [],
+      "recall_listed_affixes": 0.9907,
+      "recall_unseen_affixes": 0.0
+    }
+  }
+}

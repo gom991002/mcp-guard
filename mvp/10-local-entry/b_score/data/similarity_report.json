@@ -1,0 +1,58 @@
+{
+  "cv": {
+    "all": {
+      "added_malicious": 4,
+      "added_benign": 4,
+      "added_benign_rate": 0.0043
+    },
+    "hit": {
+      "added_malicious": 0,
+      "added_benign": 0,
+      "added_benign_rate": 0.0
+    }
+  },
+  "variant": "hit",
+  "use": "evidence for reviewers and the review aid; does not raise review",
+  "test": {
+    "malicious": 183,
+    "benign": 230,
+    "similarity_malicious": 53,
+    "similarity_benign": 0,
+    "added_malicious": 0,
+    "added_benign": 0,
+    "rule_recall": 0.6503,
+    "rule_plus_similarity_recall": 0.6503,
+    "rule_false_positive_rate": 0.2043,
+    "rule_plus_similarity_false_positive_rate": 0.2043,
+    "by_group": {
+      "npm/compromised_lib": {
+        "n": 23,
+        "similarity": 0.0
+      },
+      "npm/malicious_intent": {
+        "n": 77,
+        "similarity": 0.4286
+      },
+      "pypi/compromised_lib": {
+        "n": 5,
+        "similarity": 0.0
+      },
+      "pypi/malicious_intent": {
+        "n": 78,
+        "similarity": 0.2564
+      }
+    }
+  },
+  "train_index_entries": 422,
+  "production_index": {
+    "model": "known-malware-similarity",
+    "variant": "hit",
+    "use": "evidence for reviewers and the review aid; does not raise review",
+    "date": "2026-11-02",
+    "source": "DataDog/malicious-software-packages-dataset (Apache-2.0), malicious-intent packages",
+    "removed_as_benign": 0,
+    "packages": 800,
+    "entries": 505,
+    "bytes": 543905
+  }
+}

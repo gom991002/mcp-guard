@@ -1,0 +1,285 @@
+{
+  "part": "test",
+  "per_signal": {
+    "B_DESCRIPTION_HIDDEN_INSTRUCTION": {
+      "benign": 422,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 844,
+      "recall": 0.3957,
+      "by_template": {
+        "Template-1": 0.4626,
+        "Template-2": 0.3793,
+        "Template-3": 0.3833
+      },
+      "by_risk": {
+        "Code Injection": 0.3846,
+        "Credential Leakage": 0.4,
+        "Data Tampering": 0.475,
+        "Financial Loss": 0.5217,
+        "Information Manipulation": 0.3869,
+        "Infrastructure Damage": 0.3231,
+        "Instruction Tampering": 0.4,
+        "Message Hijacking": 0.3421,
+        "Other": 0.5,
+        "Privacy Leakage": 0.4056,
+        "Service Disruption": 0.3758
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_PROMPT_OVERRIDE": {
+      "benign": 422,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 844,
+      "recall": 0.0782,
+      "by_template": {
+        "Template-1": 0.034,
+        "Template-2": 0.0552,
+        "Template-3": 0.1106
+      },
+      "by_risk": {
+        "Code Injection": 0.1538,
+        "Credential Leakage": 0.05,
+        "Data Tampering": 0.0,
+        "Financial Loss": 0.0,
+        "Information Manipulation": 0.1357,
+        "Infrastructure Damage": 0.0308,
+        "Instruction Tampering": 0.05,
+        "Message Hijacking": 0.0263,
+        "Other": 0.25,
+        "Privacy Leakage": 0.0222,
+        "Service Disruption": 0.1544
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_SECRET_HARVESTING": {
+      "benign": 422,
+      "benign_held": 1,
+      "benign_hold_rate": 0.0024,
+      "attacks": 844,
+      "recall": 0.0225,
+      "by_template": {
+        "Template-1": 0.0204,
+        "Template-2": 0.0414,
+        "Template-3": 0.0098
+      },
+      "by_risk": {
+        "Code Injection": 0.0,
+        "Credential Leakage": 0.45,
+        "Data Tampering": 0.0,
+        "Financial Loss": 0.0,
+        "Information Manipulation": 0.005,
+        "Infrastructure Damage": 0.0,
+        "Instruction Tampering": 0.0,
+        "Message Hijacking": 0.0,
+        "Other": 0.0,
+        "Privacy Leakage": 0.0,
+        "Service Disruption": 0.0
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 1
+      },
+      "benign_examples": [
+        "Run a sample workload on the given target using a Performix recipe, and interpret the results. Some example user requests: 'Help me analyze my code's performanc"
+      ]
+    },
+    "B_DESCRIPTION_CROSS_TOOL_DIRECTIVE": {
+      "benign": 422,
+      "benign_held": 1,
+      "benign_hold_rate": 0.0024,
+      "attacks": 844,
+      "recall": 0.5912,
+      "by_template": {
+        "Template-1": 0.7007,
+        "Template-2": 0.6862,
+        "Template-3": 0.484
+      },
+      "by_risk": {
+        "Code Injection": 0.7692,
+        "Credential Leakage": 0.675,
+        "Data Tampering": 0.25,
+        "Financial Loss": 0.4348,
+        "Information Manipulation": 0.5829,
+        "Infrastructure Damage": 0.9538,
+        "Instruction Tampering": 0.65,
+        "Message Hijacking": 0.3158,
+        "Other": 1.0,
+        "Privacy Leakage": 0.4278,
+        "Service Disruption": 0.8389
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 1,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_ARGUMENT_TAMPERING": {
+      "benign": 422,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 844,
+      "recall": 0.2453,
+      "by_template": {
+        "Template-1": 0.0136,
+        "Template-2": 0.0034,
+        "Template-3": 0.5012
+      },
+      "by_risk": {
+        "Code Injection": 0.1154,
+        "Credential Leakage": 0.1,
+        "Data Tampering": 0.325,
+        "Financial Loss": 0.087,
+        "Information Manipulation": 0.402,
+        "Infrastructure Damage": 0.0,
+        "Instruction Tampering": 0.275,
+        "Message Hijacking": 0.1579,
+        "Other": 0.25,
+        "Privacy Leakage": 0.1111,
+        "Service Disruption": 0.3624
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    },
+    "B_DESCRIPTION_PRIORITY_CLAIM": {
+      "benign": 422,
+      "benign_held": 0,
+      "benign_hold_rate": 0.0,
+      "attacks": 844,
+      "recall": 0.1718,
+      "by_template": {
+        "Template-1": 0.0,
+        "Template-2": 0.0,
+        "Template-3": 0.3563
+      },
+      "by_risk": {
+        "Code Injection": 0.1154,
+        "Credential Leakage": 0.0,
+        "Data Tampering": 0.0,
+        "Financial Loss": 0.0,
+        "Information Manipulation": 0.3015,
+        "Infrastructure Damage": 0.0923,
+        "Instruction Tampering": 0.175,
+        "Message Hijacking": 0.0,
+        "Other": 0.25,
+        "Privacy Leakage": 0.0,
+        "Service Disruption": 0.4564
+      },
+      "benign_held_by_source": {
+        "mcptox_clean": 0,
+        "docker_catalog": 0
+      },
+      "benign_examples": []
+    }
+  },
+  "word_rules": {
+    "benign": 422,
+    "benign_held": 1,
+    "benign_hold_rate": 0.0024,
+    "attacks": 844,
+    "recall": 0.4834,
+    "by_template": {
+      "Template-1": 0.4898,
+      "Template-2": 0.4552,
+      "Template-3": 0.5012
+    },
+    "by_risk": {
+      "Code Injection": 0.5385,
+      "Credential Leakage": 0.65,
+      "Data Tampering": 0.475,
+      "Financial Loss": 0.5217,
+      "Information Manipulation": 0.5276,
+      "Infrastructure Damage": 0.3538,
+      "Instruction Tampering": 0.45,
+      "Message Hijacking": 0.3684,
+      "Other": 0.75,
+      "Privacy Leakage": 0.4222,
+      "Service Disruption": 0.5302
+    },
+    "benign_held_by_source": {
+      "mcptox_clean": 0,
+      "docker_catalog": 1
+    },
+    "benign_examples": [
+      "Run a sample workload on the given target using a Performix recipe, and interpret the results. Some example user requests: 'Help me analyze my code's performanc"
+    ]
+  },
+  "structure_only": {
+    "benign": 422,
+    "benign_held": 1,
+    "benign_hold_rate": 0.0024,
+    "attacks": 844,
+    "recall": 0.7014,
+    "by_template": {
+      "Template-1": 0.7007,
+      "Template-2": 0.6862,
+      "Template-3": 0.7125
+    },
+    "by_risk": {
+      "Code Injection": 0.7692,
+      "Credential Leakage": 0.75,
+      "Data Tampering": 0.5125,
+      "Financial Loss": 0.4348,
+      "Information Manipulation": 0.7638,
+      "Infrastructure Damage": 1.0,
+      "Instruction Tampering": 0.675,
+      "Message Hijacking": 0.4737,
+      "Other": 1.0,
+      "Privacy Leakage": 0.5111,
+      "Service Disruption": 0.8926
+    },
+    "benign_held_by_source": {
+      "mcptox_clean": 1,
+      "docker_catalog": 0
+    },
+    "benign_examples": []
+  },
+  "word_and_structure": {
+    "benign": 422,
+    "benign_held": 2,
+    "benign_hold_rate": 0.0047,
+    "attacks": 844,
+    "recall": 0.8211,
+    "by_template": {
+      "Template-1": 0.8299,
+      "Template-2": 0.8103,
+      "Template-3": 0.8256
+    },
+    "by_risk": {
+      "Code Injection": 0.8462,
+      "Credential Leakage": 0.95,
+      "Data Tampering": 0.725,
+      "Financial Loss": 0.6957,
+      "Information Manipulation": 0.8593,
+      "Infrastructure Damage": 1.0,
+      "Instruction Tampering": 0.8,
+      "Message Hijacking": 0.6842,
+      "Other": 1.0,
+      "Privacy Leakage": 0.6833,
+      "Service Disruption": 0.9262
+    },
+    "benign_held_by_source": {
+      "mcptox_clean": 1,
+      "docker_catalog": 1
+    },
+    "benign_examples": [
+      "Run a sample workload on the given target using a Performix recipe, and interpret the results. Some example user requests: 'Help me analyze my code's performanc"
+    ]
+  },
+  "bars": {
+    "each_signal_at_most_1pct": true,
+    "together_at_most_2pct": true
+  }
+}

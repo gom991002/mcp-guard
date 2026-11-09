@@ -1,0 +1,1546 @@
+{
+  "model": "qwen2.5-coder:7b",
+  "base_url": "http://mcp-guard-ollama:11434/v1",
+  "per_class": 30,
+  "seed": 20261102,
+  "held_test": {
+    "malicious": 177,
+    "benign": 200
+  },
+  "summary": {
+    "malicious": {
+      "n": 30,
+      "suspicious": 1,
+      "unclear": 23,
+      "likely_benign": 6,
+      "suspicious_rate": 0.0333,
+      "unclear_rate": 0.7667,
+      "likely_benign_rate": 0.2,
+      "suspicious_ci95": [
+        0.0059,
+        0.1667
+      ],
+      "unclear_ci95": [
+        0.5907,
+        0.8821
+      ],
+      "likely_benign_ci95": [
+        0.095,
+        0.3731
+      ]
+    },
+    "benign": {
+      "n": 30,
+      "suspicious": 0,
+      "unclear": 25,
+      "likely_benign": 5,
+      "suspicious_rate": 0.0,
+      "unclear_rate": 0.8333,
+      "likely_benign_rate": 0.1667,
+      "suspicious_ci95": [
+        0.0,
+        0.1135
+      ],
+      "unclear_ci95": [
+        0.6644,
+        0.9266
+      ],
+      "likely_benign_ci95": [
+        0.0734,
+        0.3356
+      ]
+    },
+    "suspicion_roc_auc": 0.6235,
+    "suspicion_scored": {
+      "malicious": 17,
+      "benign": 25
+    },
+    "checks": {
+      "sends_data_out": {
+        "malicious": {
+          "yes": 2,
+          "no": 15,
+          "unclear": 0
+        },
+        "benign": {
+          "yes": 2,
+          "no": 23,
+          "unclear": 0
+        }
+      },
+      "runs_without_being_called": {
+        "malicious": {
+          "yes": 6,
+          "no": 11,
+          "unclear": 0
+        },
+        "benign": {
+          "yes": 1,
+          "no": 24,
+          "unclear": 0
+        }
+      },
+      "fetches_or_decodes_and_runs": {
+        "malicious": {
+          "yes": 5,
+          "no": 12,
+          "unclear": 0
+        },
+        "benign": {
+          "yes": 5,
+          "no": 20,
+          "unclear": 0
+        }
+      },
+      "hides_intent": {
+        "malicious": {
+          "yes": 2,
+          "no": 15,
+          "unclear": 0
+        },
+        "benign": {
+          "yes": 0,
+          "no": 25,
+          "unclear": 0
+        }
+      },
+      "fits_stated_purpose": {
+        "malicious": {
+          "yes": 0,
+          "no": 1,
+          "unclear": 16
+        },
+        "benign": {
+          "yes": 5,
+          "no": 0,
+          "unclear": 20
+        }
+      }
+    }
+  },
+  "mean_seconds": 76.3,
+  "results": [
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "org.mixedrealitytoolkit.core",
+      "version": "10.0.1",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 46.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "com.unity.test-framework.build",
+      "version": "10.0.1",
+      "assessment": "unclear",
+      "reasons": [
+        "The package does not send any data out.",
+        "It does not run commands or network calls at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It does not hide its intent.",
+        "The stated description is unclear and does not provide enough information to determine the package's purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 37.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "bambang-botok47-breki",
+      "version": "1.1.1",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is empty, making it unclear what the package is supposed to do."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 62.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "maya-papeda13-miaww",
+      "version": "2.1.2",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is empty, making it unclear what the package is supposed to do."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 62.6
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "lina-ragi30-sluey",
+      "version": "4.4.2",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 56.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "yandex-lego",
+      "version": "5.0.0",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 3,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 47.0
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "expense-management",
+      "version": "99.9.2",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 46.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "@pluxee-design-system/core",
+      "version": "10.9897.9889",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 4,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 65.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "jaja-naget46-miaww",
+      "version": "3.3.3",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is empty, making it unclear what the package is supposed to do."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 62.7
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "flame-monorepo",
+      "version": "1.0.0",
+      "assessment": "unclear",
+      "reasons": [
+        "No evidence of data being sent out.",
+        "No evidence of running without being called.",
+        "No evidence of fetching or decoding and running code.",
+        "No evidence of hiding intent.",
+        "Stated description is empty."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 32.3
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "@vfx-payment/transaction-summary",
+      "version": "99.99.99",
+      "assessment": "unclear",
+      "reasons": [
+        "No evidence of data being sent out.",
+        "No evidence of running without being called.",
+        "No evidence of fetching or decoding and running code.",
+        "No evidence of hiding intent.",
+        "The stated description is unclear and potentially misleading."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 33.6
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "eslint-config-proton-lint",
+      "version": "1.0.0",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 3,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 48.5
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "react-bindify-decorators",
+      "version": "8.10.10",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 5,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 62.5
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "react-server-dom-turbopack-experimental",
+      "version": "10.0.1",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 3,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 63.0
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "tomi-lapis21-sluey",
+      "version": "2.3.3",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "It does not run commands or network calls at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is empty, making it unclear what the package is supposed to do."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 61.7
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "multiturn-prompts-agent",
+      "version": "10.0.1",
+      "assessment": "unclear",
+      "reasons": [
+        "The package description is unclear and does not provide enough information about what the package does.",
+        "There is no evidence of the package sending data, running without being called, fetching or decoding and running code, or hiding its intent."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 32.4
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "aem-headless-web-component",
+      "version": "5.0.0",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 3,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 41.8
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "unreal-engine-material-editor",
+      "version": "1.0.1",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The package runs a script (`main.js`) at install time without being called by a user function.",
+        "It uses `child_process.spawn` to run a script in the background, which could be used for malicious purposes.",
+        "The stated purpose does not align with the actual functionality observed in the code.",
+        "The code is similar to known malware, which raises suspicion."
+      ],
+      "suspicion": 80,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 55.5
+    },
+    {
+      "ecosystem": "npm",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "@identity-authn/authn-js-sdk",
+      "version": "9.9.9",
+      "assessment": "unclear",
+      "reasons": [
+        "No evidence of data being sent out.",
+        "No evidence of running without being called.",
+        "No evidence of fetching or decoding and running code.",
+        "No evidence of hiding intent.",
+        "Stated description is empty."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 32.7
+    },
+    {
+      "ecosystem": "npm",
+      "category": "compromised_lib",
+      "label": 1,
+      "name": "@orbitgtbelgium/mapbox-gl-draw-scale-rotate-mode",
+      "version": "1.1.1",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The script runs commands at install time without being called by a user.",
+        "It downloads and executes code from external sources (curl and irm).",
+        "The purpose of the package is not clearly stated, and the script's behavior is not aligned with the stated description."
+      ],
+      "suspicion": 70,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 59.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "compromised_lib",
+      "label": 1,
+      "name": "coinmarketcap-api",
+      "version": "3.1.2",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The package runs commands at install time, which is unusual for a library.",
+        "It fetches and runs code from external sources (PowerShell script and bash script).",
+        "The stated purpose is unclear, and the package's behavior does not align with a typical API wrapper.",
+        "The package does not send any data out.",
+        "The package does not hide its intent."
+      ],
+      "suspicion": 70,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 65.1
+    },
+    {
+      "ecosystem": "npm",
+      "category": "compromised_lib",
+      "label": 1,
+      "name": "@crowdstrike/glide-core",
+      "version": "0.34.2",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not appear to send any data out.",
+        "The code does not appear to run commands or network calls at install time or as soon as it is imported.",
+        "The code does not appear to download or decode code and then run it.",
+        "The code does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is vague and does not clearly indicate the package's purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 16,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 63.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "perlreq",
+      "version": "",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The code decodes and executes a compressed and encoded payload, which could be malicious.",
+        "It runs without being called, which is suspicious.",
+        "The intent is hidden by using obfuscated code.",
+        "The stated description is empty, making it unclear what the package is supposed to do."
+      ],
+      "suspicion": 80,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "yes",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 103.4
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "nurset",
+      "version": "99.7",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 57.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "easydicts",
+      "version": "94.6",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The code sends data (hostname, username, directory, and MAC address) to an external URL.",
+        "It runs commands (`getmac` and `ifconfig`) at runtime.",
+        "The package's stated description is empty, which is unusual.",
+        "The code is similar to known malware, which raises suspicion."
+      ],
+      "suspicion": 80,
+      "checks": {
+        "sends_data_out": "yes",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 5,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 73.3
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "xolovzgfkdamoj",
+      "version": "",
+      "assessment": "suspicious",
+      "reasons": [
+        "The code decodes and executes base64-encoded data, which could be malicious.",
+        "It runs code without being called, which is suspicious.",
+        "The code appears to be obfuscated and designed to hide its intent.",
+        "The stated purpose is unknown, and the code does not clearly fit any known purpose."
+      ],
+      "suspicion": 80,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "yes",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 74.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "pytorch-pandas",
+      "version": "14.19.3",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 5,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 64.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "reeuests",
+      "version": "",
+      "assessment": "likely_benign",
+      "reasons": [
+        "It downloads and executes files from a hard-coded external address.",
+        "It runs commands at install time and as soon as it is imported.",
+        "It fetches and decodes code and then runs it.",
+        "It does not fit the stated description of a simple HTTP client.",
+        "It appears to be a backdoor or malicious software."
+      ],
+      "suspicion": 90,
+      "checks": {
+        "sends_data_out": "yes",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "no"
+      },
+      "evidence_items": 15,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 165.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "mnolith",
+      "version": "912.6",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 58.3
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "malicious_intent",
+      "label": 1,
+      "name": "spl-types",
+      "version": "1.0.4",
+      "assessment": "unclear",
+      "reasons": [
+        "model reply did not follow the format"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": true,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 62.4
+    },
+    {
+      "ecosystem": "npm",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "@remotion/renderer",
+      "version": "4.0.540",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not appear to send any data out.",
+        "The code does not appear to run without being called.",
+        "The code does not appear to fetch or decode and run code.",
+        "The code does not appear to hide its intent.",
+        "The stated purpose of the package is to render Remotion videos using Node.js or Bun, but the code does not provide enough evidence to confirm this."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 13,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 187.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "@firebase/vertexai",
+      "version": "1.2.4",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run any commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not hide its intent.",
+        "The stated description is unclear and does not provide enough information to determine the package's purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 119.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "top_5000",
+      "label": 0,
+      "name": "workbox-strategies",
+      "version": "7.4.1",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The code does not send any data to external addresses.",
+        "It does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It is not obfuscated or written to hide what it does.",
+        "The code aligns with the stated purpose of implementing common caching strategies."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "yes"
+      },
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 148.9
+    },
+    {
+      "ecosystem": "npm",
+      "category": "top_5000",
+      "label": 0,
+      "name": "@electric-sql/pglite-socket",
+      "version": "0.2.17",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data to external addresses.",
+        "The code does not run commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not hide its intent.",
+        "The stated purpose is unclear, as it does not specify what the package does."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 7,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 177.2
+    },
+    {
+      "ecosystem": "npm",
+      "category": "top_5000",
+      "label": 0,
+      "name": "teeny-request",
+      "version": "11.1.1",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out to a hard-coded external address.",
+        "The code does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is unclear, and the code does not provide enough information to determine if it fits the stated purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 4,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 82.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "aiomoto",
+      "version": "0.5.9",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "It does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It is not obfuscated or written to hide what it does.",
+        "The stated purpose of the package is Moto-style AWS service mocks for aiobotocore, but the code does not provide any evidence of this functionality."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 67.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "esphome-glyphsets",
+      "version": "0.2.0",
+      "assessment": "unclear",
+      "reasons": [
+        "The script runs a network command (`pip index versions gflanguages`) at install time, which could be seen as suspicious.",
+        "The script does not send any data out.",
+        "The script does not decode or run any external code.",
+        "The script does not hide its intent.",
+        "The stated purpose is unclear, as the script does not directly relate to glyphsets for ESPHome."
+      ],
+      "suspicion": 10,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "yes",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 62.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "ecpy",
+      "version": "1.2.5",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run any commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code is not obfuscated or written to hide what it does.",
+        "The stated description is too vague to determine if the code fits its purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 79.5
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "azure-ai-textanalytics",
+      "version": "5.4.0",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code is not obfuscated or written to hide what it does.",
+        "The stated description is unclear, and the code does not provide enough information to determine its purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 76.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "pytest-lazy-fixture",
+      "version": "0.6.3",
+      "assessment": "unclear",
+      "reasons": [
+        "The package description is unclear and does not provide enough information about its functionality.",
+        "There is no evidence of data being sent, commands being run, or code being decoded and executed."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 0,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 30.6
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "schemdraw",
+      "version": "0.23",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "It does not run commands or network calls at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It does not hide its intent.",
+        "The stated description is unclear, and the code does not directly relate to electrical circuit schematic drawing."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 55.9
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "pytest-codeblocks",
+      "version": "0.18.0",
+      "assessment": "unclear",
+      "reasons": [
+        "The code executes code blocks, which could be malicious if the blocks contain harmful code.",
+        "It does not send data out, but it runs code, which could be used for malicious purposes.",
+        "The package's stated purpose is unclear, as it does not specify what it does with the code blocks."
+      ],
+      "suspicion": 50,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 74.6
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "pyocse",
+      "version": "0.1.6",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data to external addresses.",
+        "The code does not run commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code is not obfuscated or written to hide what it does.",
+        "The stated description is unclear, and the code does not provide enough information to determine if it fits the stated purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 79.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "lusid-sdk",
+      "version": "2.3.326",
+      "assessment": "unclear",
+      "reasons": [
+        "The code makes network requests to an external address (`self.token_url`).",
+        "It sends data (`token_request_body` and `request_body`) to the external address.",
+        "The package's stated description is vague and does not specify what the package does.",
+        "There is no clear indication of whether the package is malicious or benign based on the provided code."
+      ],
+      "suspicion": 20,
+      "checks": {
+        "sends_data_out": "yes",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 74.5
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "django-jsoneditor",
+      "version": "0.2.4",
+      "assessment": "unclear",
+      "reasons": [
+        "The code creates a new Function object with parameters that could include user input, which could be used to execute arbitrary code.",
+        "The purpose of the package is not clearly stated, and the code does not directly relate to editing JSON, which could indicate a misalignment between the code and its description."
+      ],
+      "suspicion": 50,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 54.4
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "suds",
+      "version": "1.2.0",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data to a hard-coded external address.",
+        "The code does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not appear to be obfuscated or written to hide what it does.",
+        "The stated description is unclear, and the code does not provide enough evidence to determine if it fits the stated purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 104.6
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "qwen-omni-utils",
+      "version": "0.0.9",
+      "assessment": "unclear",
+      "reasons": [
+        "The code fetches data from URLs and decodes it, which could be malicious if not properly controlled.",
+        "The package's stated description is unclear, making it difficult to assess its purpose.",
+        "The code does not send data out, which is a positive point.",
+        "The code does not run without being called, which is a positive point.",
+        "The code decodes and runs data, which could be malicious if not properly controlled."
+      ],
+      "suspicion": 20,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 79.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "aiofastnet",
+      "version": "1.2.0",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out to a hard-coded external address.",
+        "The code does not run any commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code is not obfuscated or written to hide what it does.",
+        "The stated description is vague and does not clearly indicate the package's purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 156.0
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "libify",
+      "version": "0.78",
+      "assessment": "unclear",
+      "reasons": [
+        "The code fetches and decodes code from a file, which could be malicious.",
+        "The purpose of the package is unclear from the given description.",
+        "The code executes decoded code, which could be harmful.",
+        "There is no evidence of sending data out.",
+        "The code does not run without being called."
+      ],
+      "suspicion": 50,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 60.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "clusterscope",
+      "version": "0.0.32",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The code does not send any data out.",
+        "It does not run any commands or network calls at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It is not obfuscated or written to hide what it does.",
+        "The functionality described in the code aligns with the stated purpose of extracting information from HPC Clusters and Jobs."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "yes"
+      },
+      "evidence_items": 12,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 127.7
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "delocate",
+      "version": "0.13.0",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The code does not send any data out.",
+        "It does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "It does not download or decode code and then run it.",
+        "It is not obfuscated or written to hide what it does.",
+        "The code appears to be a utility for moving macOS dynamic libraries into a package, which fits the stated purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "yes"
+      },
+      "evidence_items": 20,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 208.2
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "checkmk-dev-tools",
+      "version": "3.0.0",
+      "assessment": "unclear",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run any commands or network calls at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code does not hide its intent.",
+        "The stated description is too vague to determine if the code fits its purpose."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 114.3
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "rank_5001_plus",
+      "label": 0,
+      "name": "sphinx-favicon",
+      "version": "1.1.0",
+      "assessment": "unclear",
+      "reasons": [
+        "It fetches data from a URL provided by the user.",
+        "It decodes the fetched data into a BytesIO object.",
+        "It does not send any data out.",
+        "It does not run without being called.",
+        "The stated purpose is unclear as it does not specify what the favicon is used for."
+      ],
+      "suspicion": 20,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "yes",
+        "hides_intent": "no",
+        "fits_stated_purpose": "unclear"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 59.4
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "mozilla-django-oidc",
+      "version": "5.0.2",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The package makes network requests to external endpoints (JWKS, token, and userinfo endpoints) as part of its normal operation.",
+        "It does not send host, user, environment, credential, or file data to a hard-coded external address.",
+        "It does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "It does not hide its intent or obfuscate its code.",
+        "The functionality aligns with the stated purpose of being a lightweight authentication and access management library for integration with OpenID Connect enabled authentication services."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "yes",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "yes"
+      },
+      "evidence_items": 3,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 146.8
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "python-tds",
+      "version": "1.17.1",
+      "assessment": "likely_benign",
+      "reasons": [
+        "The code does not send any data out.",
+        "The code does not run commands, network calls, or decoded code at install time or as soon as it is imported.",
+        "The code does not download or decode code and then run it.",
+        "The code is not obfuscated or written to hide what it does.",
+        "The code appears to be a Python DBAPI driver for MSSQL using pure Python TDS (Tabular Data Stream) protocol implementation, which fits the stated description."
+      ],
+      "suspicion": 0,
+      "checks": {
+        "sends_data_out": "no",
+        "runs_without_being_called": "no",
+        "fetches_or_decodes_and_runs": "no",
+        "hides_intent": "no",
+        "fits_stated_purpose": "yes"
+      },
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 326.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "webdataset",
+      "version": "1.0.2",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 5,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.2
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "azure-mgmt-applicationinsights",
+      "version": "4.1.0",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "dbt-spark",
+      "version": "1.11.0",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 8,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "invoke",
+      "version": "3.0.3",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 1,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.1
+    },
+    {
+      "ecosystem": "pypi",
+      "category": "top_5000",
+      "label": 0,
+      "name": "iterproxy",
+      "version": "0.3.1",
+      "assessment": "unclear",
+      "reasons": [
+        "no model answer: <urlopen error [Errno -3] Try again>"
+      ],
+      "suspicion": null,
+      "checks": {},
+      "evidence_items": 2,
+      "similar_to_known_malware": false,
+      "code_aimed_at_ai_reviewer": false,
+      "seconds": 5.2
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadAuditLog",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogStreams", "logs:GetLogEvents", "logs:FilterLogEvents",
+        "logs:StartQuery", "logs:GetQueryResults", "logs:StopQuery"
+      ],
+      "Resource": "arn:aws:logs:<region>:<account>:log-group:/mcp-guard/audit:*"
+    },
+    {
+      "Sid": "ManageAlertsAndRetention",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups", "logs:DescribeMetricFilters",
+        "logs:PutMetricFilter", "logs:DeleteMetricFilter",
+        "cloudwatch:PutMetricAlarm", "cloudwatch:DescribeAlarms",
+        "cloudwatch:PutDashboard", "cloudwatch:GetDashboard", "cloudwatch:ListDashboards",
+        "sns:CreateTopic", "sns:Subscribe", "sns:ListSubscriptionsByTopic"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "KeepSixMonthsOfAuditLog",
+      "Effect": "Deny",
+      "Action": ["logs:DeleteLogGroup", "logs:DeleteLogStream", "logs:PutRetentionPolicy",
+                 "logs:DeleteRetentionPolicy", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:<region>:<account>:log-group:/mcp-guard/audit*"
+    }
+  ]
+}

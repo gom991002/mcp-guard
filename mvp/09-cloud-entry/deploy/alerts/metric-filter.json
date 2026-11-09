@@ -1,0 +1,13 @@
+{
+  "logGroupName": "/mcp-guard/audit",
+  "filterName": "mcp-guard-correlation-alert",
+  "filterPattern": "{ $.event_type = \"correlation_alert\" }",
+  "metricTransformations": [
+    {
+      "metricName": "CorrelationAlerts",
+      "metricNamespace": "mcp-guard",
+      "metricValue": "1",
+      "defaultValue": 0
+    }
+  ]
+}

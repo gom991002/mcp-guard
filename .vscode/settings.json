@@ -1,0 +1,18 @@
+{
+  "python.testing.unittestEnabled": true,
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestArgs": [
+    "discover",
+    "-s",
+    "tests"
+  ],
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/src"
+  ],
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}\\src"
+  },
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true
+}
+
